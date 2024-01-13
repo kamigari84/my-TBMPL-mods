@@ -7,6 +7,7 @@ using Timberborn.WaterBuildings;
 
 namespace WaterPumpPipe_Extension
 {
+    [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/WaterPumpPipe%20Extension/version.json")]
     [TBMPL(TBMPL.Prefix + "PumpPipeExt", "WaterPumpPipe Extension", "1.0.0")]
     internal sealed class EP : EntryPoint
     {
