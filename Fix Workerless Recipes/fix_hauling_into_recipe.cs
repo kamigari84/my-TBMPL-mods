@@ -52,7 +52,7 @@ namespace WorkerlessRecipe_HaulingFix
 					// num += allowedGood.Amount;
 					// num2 += num3;
 					fill *= Mathf.Clamp01((float)num3 / (float)allowedGood.Amount); // update how filled up we are (if any good is at 0 then we are not filled at all)
-				}
+				} else { fill = 0f; }
 			}
 		}
 		__result = fill;
