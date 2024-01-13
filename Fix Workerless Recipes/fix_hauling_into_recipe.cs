@@ -9,6 +9,7 @@ using Timberborn.Common;
 using Timberborn.InventorySystem;
 using Timberborn.Goods;
 using System.Reflection;
+//using TBMPLCore.Plugin.Logs;
 
 namespace WorkerlessRecipe_HaulingFix
 {
@@ -16,6 +17,8 @@ namespace WorkerlessRecipe_HaulingFix
     internal sealed class EP : EntryPoint
     {
         public static new EPConfig Config { get; }
+        //public static new ILog Log { get; }
+
 
         // Creates the plugin configuration
         protected override IConfig GetConfig()
@@ -51,9 +54,10 @@ namespace WorkerlessRecipe_HaulingFix
 					// num += allowedGood.Amount;
 					// num2 += num3;
 					fill *= Mathf.Clamp01((float)num3 / (float)allowedGood.Amount); // update how filled up we are (if any good is at 0 then we are not filled at all)
-				}
+				} else { fill = 0; }
 			}
 		}
+			//Log.Info("Fulness"+(fill*100f)+"%");
 		__result = fill;
 	}
     }

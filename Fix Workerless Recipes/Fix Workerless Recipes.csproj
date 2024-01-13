@@ -42,6 +42,9 @@
     <Reference Include="Timberborn.Goods">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Goods.dll</HintPath>
     </Reference>
+    <Reference Include="Timberborn.Workshops">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Workshops.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\Timberborn_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
