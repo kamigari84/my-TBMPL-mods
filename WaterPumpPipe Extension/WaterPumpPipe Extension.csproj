@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>WaterPumpPipe_Extension</RootNamespace>
+    <Nullable>enable</Nullable>
+	<Description>modifiable waterpump pipe max lenght</Description>
+    <Product>TBMPL</Product>
+    <AssemblyName>WaterPumpPipe_Extension</AssemblyName>
+    <!-- The prefix should match the prefix in the attribute -->
+    <AssemblyDirName>TBMPL_$(AssemblyName)</AssemblyDirName>
+    <!-- The version should match the version in the attribute -->
+    <Version>1.0.0</Version>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Bindito.Core">
+      <HintPath>..\..\Timberborn_Data\Managed\Bindito.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bindito.Unity">
+      <HintPath>..\..\Timberborn_Data\Managed\Bindito.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="TBMPLCore">
+      <HintPath>..\..\mods\TBMPL_Core\TBMPLCore.dll</HintPath>
+    </Reference>
+    <Reference Include="TBMPLLinker">
+      <HintPath>..\..\mods\TBMPL_Linker\TBMPLLinker.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BaseComponentSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.BaseComponentSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Common">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.WaterBuildings">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.WaterBuildings.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.WaterSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.WaterSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.WaterWorkshops">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.WaterWorkshops.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\Timberborn_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
