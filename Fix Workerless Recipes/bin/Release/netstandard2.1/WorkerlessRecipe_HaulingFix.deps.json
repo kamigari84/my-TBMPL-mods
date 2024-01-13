@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "WorkerlessRecipe_HaulingFix/1.0.0": {
+      "WorkerlessRecipe_HaulingFix/1.0.1": {
         "dependencies": {
           "0Harmony": "2.9.0.0",
           "Bindito.Core": "1.0.0.0",
@@ -1708,7 +1708,7 @@
     }
   },
   "libraries": {
-    "WorkerlessRecipe_HaulingFix/1.0.0": {
+    "WorkerlessRecipe_HaulingFix/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

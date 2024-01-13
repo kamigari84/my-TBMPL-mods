@@ -13,7 +13,7 @@ using System.Reflection;
 
 namespace WorkerlessRecipe_HaulingFix
 {
-    [TBMPL(TBMPL.Prefix + "Hauling22RecipeFix", "Fixing hauling priority to unmanned production buildings dropping off way too early", "1.0.0")]
+    [TBMPL(TBMPL.Prefix + "Hauling22RecipeFix", "Fixing hauling priority to unmanned production buildings dropping off way too early", "1.0.1")]
     internal sealed class EP : EntryPoint
     {
         public static new EPConfig Config { get; }
