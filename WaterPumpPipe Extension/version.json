@@ -1,0 +1,7 @@
+{
+  "LatestVersion": "1.0.0",
+  "Message": "New version available",
+  "AlwaysShowMessage": false,
+  "AutoUpdate": true,
+  "LatestDll": "https://github.com/kamigari84/my-TBMPL-mods/raw/update5/WaterPumpPipe%20Extension/bin/Release/netstandard2.1/WaterPumpPipe_Extension.dll"
+}
