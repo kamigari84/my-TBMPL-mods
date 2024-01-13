@@ -12,6 +12,7 @@ using System.Reflection;
 
 namespace WorkerlessRecipe_HaulingFix
 {
+    [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/version.json")]
     [TBMPL(TBMPL.Prefix + "Hauling22RecipeFix", "Fixing hauling priority to unmanned production buildings dropping off way too early", "1.0.0")]
     internal sealed class EP : EntryPoint
     {
