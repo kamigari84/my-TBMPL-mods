@@ -36,9 +36,10 @@ namespace WaterPumpPipe_Extension
     {
         [HarmonyPrefix]
         [HarmonyPatch(typeof(WaterInputSpecification), "Awake")]
-        private static void DepthPatcher(ref int ____maxDepth)
+        private static bool DepthPatcher(ref int ____maxDepth)
         {
             ____maxDepth = ____maxDepth * EP.Config.Multiplier + EP.Config.Addend;
+            return false; // make sure the original doesn't run
         }
 
     }
