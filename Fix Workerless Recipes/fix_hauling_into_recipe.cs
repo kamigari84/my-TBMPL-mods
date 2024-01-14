@@ -30,62 +30,88 @@ namespace WorkerlessRecipe_HaulingFix
     }
     internal sealed class EPConfig : BaseConfig { }
 
-
-    // Some of our patches for the game
-    [HarmonyPatch]
-    internal static class Patch1
+    namespace Patches
     {
-        private static MethodInfo TargetMethod()
+        // Some of our patches for the game
+        [HarmonyPatch]
+        internal static class Patch1
         {
-            return AccessTools.Method(typeof(InventoryFillCalculator), "GetInventoryFillPercentage");
-        }
-        static bool Prefix(Inventory inventory, ReadOnlyHashSet<string> goods, bool onlyInStock, ref float __result)
-        {
-            float fill = 0f; // keep track of the average filling of all ingredients
-            List<float> fills = new List<float>
+            [HarmonyPatch(typeof(InventoryFillCalculator), "GetOutputFillPercentage")]
+            static bool Prefix(Inventory inventory, ref float __result)
+            {
+                float fill = 0f; // keep track of the average filling of all ingredients
+                List<float> fills = new List<float>
             {
                 fill
             };
-            foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
-            {
-                string goodId = allowedGood.StorableGood.GoodId;
-                if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
+                ReadOnlyHashSet<string> goods = inventory.InputGoods;
+                foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
                 {
-                    int num3 = inventory.AmountInStock(goodId);
-                    if (!onlyInStock || num3 > 0)
+                    string goodId = allowedGood.StorableGood.GoodId;
+                    if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
                     {
-                        fills.Add(Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); // list all ratios
+                        int num3 = inventory.AmountInStock(goodId);
+                        fills.Add(Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); //list all ratios
                     }
                 }
+                __result = fills.Max<float>();
+                //Log.Info("Fullness of"+__result*100f+"%");
+                return false;
             }
-            __result = fills.Max<float>();
-            Log.Info("Fullness of" + __result * 100f + " collated from" + fills);
-            return false;
         }
-    }
-    [HarmonyPatch]
-    internal static class Patch2
-    {
-        [HarmonyPatch(typeof(InventoryFillCalculator), "GetInputFillPercentage")]
-        static bool Prefix(Inventory inventory, ref float __result)        {
-            float fill = 1f; // keep track of the average filling of all ingredients
-            List<float> fills = new List<float>
+        [HarmonyPatch]
+        internal static class Patch2
+        {
+            [HarmonyPatch(typeof(InventoryFillCalculator), "GetInputFillPercentage")]
+            static bool Prefix(Inventory inventory, ref float __result)
+            {
+                float fill = 1f; // keep track of the average filling of all ingredients
+                List<float> fills = new List<float>
             {
                 fill
             };
-            ReadOnlyHashSet<string> goods = inventory.InputGoods;
-            foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
-            {
-                string goodId = allowedGood.StorableGood.GoodId;
-                if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
+                ReadOnlyHashSet<string> goods = inventory.InputGoods;
+                foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
                 {
-                    int num3 = inventory.AmountInStock(goodId);
-                    fills.Add(Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); //list all ratios
+                    string goodId = allowedGood.StorableGood.GoodId;
+                    if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
+                    {
+                        int num3 = inventory.AmountInStock(goodId);
+                        fills.Add(Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); //list all ratios
+                    }
+                }
+                __result = fills.Min<float>();
+                //Log.Info("Fullness of"+__result*100f+"%");
+                return false;
+            }
+        }
+        [HarmonyPatch]
+        internal static class PatchStock
+        {
+            [HarmonyPatch(typeof(InventoryFillCalculator), "GetInStockOutputFillPercentage")]
+            private static void Postfix(Inventory inventory, ref float __result)
+            {
+                float fill = 0f; // keep track of the average filling of all ingredients
+                List<float> fills = new List<float>
+            {
+                fill
+            };
+                ReadOnlyHashSet<string> goods = inventory.InputGoods;
+                foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
+                {
+                    string goodId = allowedGood.StorableGood.GoodId;
+                    if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
+                    {
+                        int num3 = inventory.AmountInStock(goodId);
+                        if (num3 > 0)
+                        {
+                            fills.Add(Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); //list all ratios}
+                        }
+                    }
+                    __result = fills.Max<float>();
+                    //Log.Info("Fullness of"+__result*100f+"%");
                 }
             }
-            __result = fills.Min<float>();
-            Log.Info("Fullness of"+__result*100f+" collated from"+fills);
-            return false;
         }
     }
 }
