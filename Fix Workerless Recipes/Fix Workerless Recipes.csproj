@@ -10,7 +10,7 @@
     <!-- The prefix should match the prefix in the attribute -->
     <AssemblyDirName>TBMPL_$(AssemblyName)</AssemblyDirName>
     <!-- The version should match the version in the attribute -->
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
 
   </PropertyGroup>
 

@@ -9,16 +9,14 @@ using Timberborn.Common;
 using Timberborn.InventorySystem;
 using Timberborn.Goods;
 using System.Reflection;
-//using TBMPLCore.Plugin.Logs;
 
 namespace WorkerlessRecipe_HaulingFix
 {
-    [TBMPL(TBMPL.Prefix + "Hauling22RecipeFix", "Fixing hauling priority to unmanned production buildings dropping off way too early", "1.0.1")]
+    [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/version.json")]
+    [TBMPL(TBMPL.Prefix + "Hauling22RecipeFix", "Fixing hauling priority dropping off way too early", "1.0.2")]
     internal sealed class EP : EntryPoint
     {
         public static new EPConfig Config { get; }
-        //public static new ILog Log { get; }
-
 
         // Creates the plugin configuration
         protected override IConfig GetConfig()
@@ -27,38 +25,52 @@ namespace WorkerlessRecipe_HaulingFix
         }
 
     }
-    internal sealed class EPConfig : BaseConfig{}
+    internal sealed class EPConfig : BaseConfig { }
 
 
     // Some of our patches for the game
-    [HarmonyPatch]
+    [HarmonyPatch(typeof(InventoryFillCalculator))]
     internal static class Patches
     {
-    private static MethodInfo TargetMethod()
-    {
-	return AccessTools.Method(typeof(InventoryFillCalculator), "GetInventoryFillPercentage");
-    }
-//HarmonyPrefix patch this method in Timberborn.InventorySystem.InventoryFillCalculator
-	static void Prefix (Inventory inventory, ReadOnlyHashSet<string> goods, bool onlyInStock, ref float __result)
-	//private float GetInventoryFillPercentage(Inventory inventory, ReadOnlyHashSet<string> goods, bool onlyInStock)
-	{
-		float fill = 1.0f; // keep track of the average filling of all ingredients
-		foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
-		{
-			string goodId = allowedGood.StorableGood.GoodId;
-			if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
-			{
-				int num3 = inventory.AmountInStock(goodId);
-				if (!onlyInStock || num3 > 0)
-				{
-					// num += allowedGood.Amount;
-					// num2 += num3;
-					fill *= Mathf.Clamp01((float)num3 / (float)allowedGood.Amount); // update how filled up we are (if any good is at 0 then we are not filled at all)
-				} else { fill = 0; }
-			}
-		}
-			//Log.Info("Fulness"+(fill*100f)+"%");
-		__result = fill;
-	}
+        private static MethodInfo TargetMethod()
+        {
+            return AccessTools.Method(typeof(InventoryFillCalculator), "GetInventoryFillPercentage");
+        }
+        static void Prefix(Inventory inventory, ReadOnlyHashSet<string> goods, bool onlyInStock, ref float __result)
+        {
+            float fill = 0f; // keep track of the average filling of all ingredients
+            foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
+            {
+                string goodId = allowedGood.StorableGood.GoodId;
+                if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
+                {
+                    int num3 = inventory.AmountInStock(goodId);
+                    if (!onlyInStock || num3 > 0)
+                    {
+                        // num += allowedGood.Amount;
+                        // num2 += num3;
+                        fill = Mathf.Max(fill, Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); // update how filled up we are (if any good is at 0 then we are not filled at all)
+                    }
+                }
+            }
+            __result = fill;
+        }
+        [HarmonyPatch("GetInputFillPercentage")]
+        static void Prefix(Inventory inventory, ref float __result)
+        //private float GetInventoryFillPercentage(Inventory inventory, ReadOnlyHashSet<string> goods, bool onlyInStock)
+        {
+            float fill = 1f; // keep track of the average filling of all ingredients
+            ReadOnlyHashSet<string> goods = inventory.InputGoods;
+            foreach (StorableGoodAmount allowedGood in inventory.AllowedGoods)
+            {
+                string goodId = allowedGood.StorableGood.GoodId;
+                if (goods.Contains(goodId) && inventory.LimitedAmount(goodId) > 0)
+                {
+                    int num3 = inventory.AmountInStock(goodId);
+                    fill = Mathf.Min(fill, Mathf.Clamp01((float)num3 / (float)allowedGood.Amount)); // update how filled up we are (if any good is at 0 then we are not filled at all)
+                }
+            }
+            __result = fill;
+        }
     }
 }
