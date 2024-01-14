@@ -22,7 +22,7 @@ using Timberborn.Emptying;
 namespace WorkerlessRecipe_HaulingFix
 {
     [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/version.json")]
-    [TBMPL(TBMPL.Prefix + "Hauling2RecipeFix", "Fixing hauling priority dropping off way too early", "1.0.5")]
+    [TBMPL(TBMPL.Prefix + "Hauling2RecipeFix", "Fixing hauling priority dropping off way too early", "1.0.6")]
     internal sealed class EP : EntryPoint
     {
         public static new EPConfig Config { get; }
@@ -30,11 +30,17 @@ namespace WorkerlessRecipe_HaulingFix
         // Creates the plugin configuration
         protected override IConfig GetConfig()
         {
-            return new EPConfig();
+            return new EPConfig
+            {
+                PrioritizeWorkerless = AddKey("PrioritizeWorkerless", true, "Maximize hauling priority on (potentially) workerless buildings"), // bool default value true
+            };
         }
 
     }
-    internal sealed class EPConfig : BaseConfig { }
+    internal sealed class EPConfig : BaseConfig
+    {
+        public bool PrioritizeWorkerless { get; set; }
+    }
 
     namespace Patches
     {
@@ -107,6 +113,8 @@ namespace WorkerlessRecipe_HaulingFix
             private static bool ManufactoryHaulBehaviorProvider_GetWeightedBehaviors_Patch(ref Manufactory ____manufactory, ref IList<WeightedBehavior> weightedBehaviors, BlockableBuilding ____blockableBuilding,
                 InventoryFillCalculator ____inventoryFillCalculator, Inventories ____inventories, FillInputWorkplaceBehavior ____fillInputWorkplaceBehavior, EmptyOutputWorkplaceBehavior ____emptyOutputWorkplaceBehavior)
             {
+                if (!EP.Config.PrioritizeWorkerless)
+                    return true;
                 //IL_0079: Unknown result type (might be due to invalid IL or missing references)
                 //IL_00ab: Unknown result type (might be due to invalid IL or missing references)
                 ProductionIncreaser p;
