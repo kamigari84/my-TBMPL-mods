@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "WaterPumpPipe_Extension/1.0.0": {
+      "WaterPumpPipe_Extension/1.0.1": {
         "dependencies": {
           "0Harmony": "2.9.0.0",
           "Bindito.Core": "1.0.0.0",
@@ -1812,7 +1812,7 @@
     }
   },
   "libraries": {
-    "WaterPumpPipe_Extension/1.0.0": {
+    "WaterPumpPipe_Extension/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "WorkerlessRecipe_HaulingFix/1.0.4": {
+      "WorkerlessRecipe_HaulingFix/1.0.5": {
         "dependencies": {
           "0Harmony": "2.9.0.0",
           "Bindito.Core": "1.0.0.0",
@@ -15,10 +15,17 @@
           "TBMPLCore": "5.3.1.0",
           "TBMPLLinker": "5.1.7.0",
           "Timberborn.BaseComponentSystem": "0.0.0.0",
+          "Timberborn.BeaverBehavior": "0.0.0.0",
+          "Timberborn.BehaviorSystem": "0.0.0.0",
+          "Timberborn.Buildings": "0.0.0.0",
+          "Timberborn.BuildingsBlocking": "0.0.0.0",
           "Timberborn.Common": "0.0.0.0",
+          "Timberborn.Emptying": "0.0.0.0",
           "Timberborn.Goods": "0.0.0.0",
+          "Timberborn.Hauling": "0.0.0.0",
           "Timberborn.InventorySystem": "0.0.0.0",
           "Timberborn.Workshops": "0.0.0.0",
+          "Timberborn.WorkSystem": "0.0.0.0",
           "UnityEngine.CoreModule": "0.0.0.0"
         },
         "runtime": {
@@ -73,6 +80,38 @@
           }
         }
       },
+      "Timberborn.BeaverBehavior/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BeaverBehavior.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BehaviorSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BehaviorSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Buildings/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Buildings.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BuildingsBlocking/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BuildingsBlocking.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.Common/0.0.0.0": {
         "runtime": {
           "Timberborn.Common.dll": {
@@ -81,9 +120,25 @@
           }
         }
       },
+      "Timberborn.Emptying/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Emptying.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.Goods/0.0.0.0": {
         "runtime": {
           "Timberborn.Goods.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Hauling/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Hauling.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -100,6 +155,14 @@
       "Timberborn.Workshops/0.0.0.0": {
         "runtime": {
           "Timberborn.Workshops.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.WorkSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.WorkSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -209,25 +272,9 @@
           }
         }
       },
-      "Timberborn.ConstructibleSystem/0.0.0.0": {
+      "Timberborn.TemplateSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.ConstructibleSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.GameDistricts/0.0.0.0": {
-        "runtime": {
-          "Timberborn.GameDistricts.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Navigation/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Navigation.dll": {
+          "Timberborn.TemplateSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -241,25 +288,177 @@
           }
         }
       },
-      "Timberborn.BuildingsBlocking/0.0.0.0": {
+      "Timberborn.NeedBehaviorSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.BuildingsBlocking.dll": {
+          "Timberborn.NeedBehaviorSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.TemplateSystem/0.0.0.0": {
+      "Timberborn.TimeSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.TemplateSystem.dll": {
+          "Timberborn.TimeSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.Characters/0.0.0.0": {
+      "Timberborn.NeedSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.Characters.dll": {
+          "Timberborn.NeedSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.GameDistricts/0.0.0.0": {
+        "runtime": {
+          "Timberborn.GameDistricts.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Effects/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Effects.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Beavers/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Beavers.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.WalkingSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.WalkingSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.CharacterModelSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.CharacterModelSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Planting/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Planting.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.ReservableSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.ReservableSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Yielding/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Yielding.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.ConstructionSites/0.0.0.0": {
+        "runtime": {
+          "Timberborn.ConstructionSites.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Demolishing/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Demolishing.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.CharacterControlSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.CharacterControlSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.MortalSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.MortalSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Carrying/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Carrying.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.DeathSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.DeathSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BeaverContaminationSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BeaverContaminationSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Wandering/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Wandering.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SleepSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SleepSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.TickSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.TickSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Metrics/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Metrics.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -273,9 +472,161 @@
           }
         }
       },
+      "Timberborn.ConstructibleSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.ConstructibleSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BlockSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BlockSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Core/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Core.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Navigation/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Navigation.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.TerrainSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.TerrainSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Rendering/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Rendering.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Coordinates/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Coordinates.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "UnityEngine.PhysicsModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.PhysicsModule.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.LevelVisibilitySystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.LevelVisibilitySystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SelectionSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SelectionSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SoundSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SoundSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.PrefabSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.PrefabSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Particles/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Particles.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "UnityEngine.ParticleSystemModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.ParticleSystemModule.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.StatusSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.StatusSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.CoreSound/0.0.0.0": {
+        "runtime": {
+          "Timberborn.CoreSound.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Animations/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Animations.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.Localization/0.0.0.0": {
         "runtime": {
           "Timberborn.Localization.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.LaborSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.LaborSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Characters/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Characters.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -297,73 +648,9 @@
           }
         }
       },
-      "Timberborn.Core/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Core.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.FeatureToggleSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.FeatureToggleSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Hauling/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Hauling.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.WorkSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.WorkSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Emptying/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Emptying.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BehaviorSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BehaviorSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Carrying/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Carrying.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.TickSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.TickSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.StatusSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.StatusSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -393,14 +680,6 @@
           }
         }
       },
-      "Timberborn.TimeSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.TimeSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.EnterableSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.EnterableSystem.dll": {
@@ -409,17 +688,41 @@
           }
         }
       },
-      "Timberborn.WalkingSystem/0.0.0.0": {
+      "Timberborn.PrioritySystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.WalkingSystem.dll": {
+          "Timberborn.PrioritySystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.LaborSystem/0.0.0.0": {
+      "Timberborn.RelationSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.LaborSystem.dll": {
+          "Timberborn.RelationSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BonusSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BonusSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.WorkerTypes/0.0.0.0": {
+        "runtime": {
+          "Timberborn.WorkerTypes.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SlotSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SlotSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -433,49 +736,25 @@
           }
         }
       },
-      "Timberborn.Buildings/0.0.0.0": {
+      "Timberborn.SceneLoading/0.0.0.0": {
         "runtime": {
-          "Timberborn.Buildings.dll": {
+          "Timberborn.SceneLoading.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.BlockSystem/0.0.0.0": {
+      "Timberborn.GameSceneLoading/0.0.0.0": {
         "runtime": {
-          "Timberborn.BlockSystem.dll": {
+          "Timberborn.GameSceneLoading.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.Beavers/0.0.0.0": {
+      "Timberborn.PrefabOptimization/0.0.0.0": {
         "runtime": {
-          "Timberborn.Beavers.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Bots/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Bots.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.PreviewSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.PreviewSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Coordinates/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Coordinates.dll": {
+          "Timberborn.PrefabOptimization.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -497,14 +776,6 @@
           }
         }
       },
-      "Timberborn.PrefabSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.PrefabSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.SaveSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.SaveSystem.dll": {
@@ -521,73 +792,25 @@
           }
         }
       },
-      "Timberborn.Animations/0.0.0.0": {
+      "Timberborn.Bots/0.0.0.0": {
         "runtime": {
-          "Timberborn.Animations.dll": {
+          "Timberborn.Bots.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.Rendering/0.0.0.0": {
+      "Timberborn.PreviewSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.Rendering.dll": {
+          "Timberborn.PreviewSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "UnityEngine.ParticleSystemModule/0.0.0.0": {
+      "Timberborn.GoodsUI/0.0.0.0": {
         "runtime": {
-          "UnityEngine.ParticleSystemModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Particles/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Particles.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.PrefabOptimization/0.0.0.0": {
-        "runtime": {
-          "Timberborn.PrefabOptimization.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.SelectionSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.SelectionSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "LINQtoCSV/1.5.0.0": {
-        "runtime": {
-          "LINQtoCSV.dll": {
-            "assemblyVersion": "1.5.0.0",
-            "fileVersion": "1.5.0.0"
-          }
-        }
-      },
-      "Timberborn.ExperimentalModeSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.ExperimentalModeSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BonusSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BonusSystem.dll": {
+          "Timberborn.GoodsUI.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -689,153 +912,17 @@
           }
         }
       },
-      "Timberborn.CommandLine/0.0.0.0": {
+      "Timberborn.LifeSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.CommandLine.dll": {
+          "Timberborn.LifeSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.PrioritySystem/0.0.0.0": {
+      "Timberborn.NotificationSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.PrioritySystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.RelationSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.RelationSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.CharacterModelSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.CharacterModelSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Metrics/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Metrics.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.WorkerTypes/0.0.0.0": {
-        "runtime": {
-          "Timberborn.WorkerTypes.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.SoundSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.SoundSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.SlotSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.SlotSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.NeedSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.NeedSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.SceneLoading/0.0.0.0": {
-        "runtime": {
-          "Timberborn.SceneLoading.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.GameSceneLoading/0.0.0.0": {
-        "runtime": {
-          "Timberborn.GameSceneLoading.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.CharacterNavigation/0.0.0.0": {
-        "runtime": {
-          "Timberborn.CharacterNavigation.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.CharacterMovementSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.CharacterMovementSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.CameraSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.CameraSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.TerrainSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.TerrainSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.NeedBehaviorSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.NeedBehaviorSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Effects/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Effects.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BlockSystemUI/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BlockSystemUI.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BuildingRange/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BuildingRange.dll": {
+          "Timberborn.NotificationSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -857,9 +944,9 @@
           }
         }
       },
-      "Timberborn.BeaverContaminationSystem/0.0.0.0": {
+      "Timberborn.CharacterMovementSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.BeaverContaminationSystem.dll": {
+          "Timberborn.CharacterMovementSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -873,113 +960,89 @@
           }
         }
       },
-      "UnityEngine.PhysicsModule/0.0.0.0": {
+      "Timberborn.CharacterNavigation/0.0.0.0": {
         "runtime": {
-          "UnityEngine.PhysicsModule.dll": {
+          "Timberborn.CharacterNavigation.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.LevelVisibilitySystem/0.0.0.0": {
+      "Timberborn.NaturalResourcesReproduction/0.0.0.0": {
         "runtime": {
-          "Timberborn.LevelVisibilitySystem.dll": {
+          "Timberborn.NaturalResourcesReproduction.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.CoreSound/0.0.0.0": {
+      "Timberborn.BuildingsNavigation/0.0.0.0": {
         "runtime": {
-          "Timberborn.CoreSound.dll": {
+          "Timberborn.BuildingsNavigation.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.LifeSystem/0.0.0.0": {
+      "Timberborn.NaturalResources/0.0.0.0": {
         "runtime": {
-          "Timberborn.LifeSystem.dll": {
+          "Timberborn.NaturalResources.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.NotificationSystem/0.0.0.0": {
+      "Timberborn.SoilMoistureSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.NotificationSystem.dll": {
+          "Timberborn.SoilMoistureSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "UnityEngine.AnimationModule/0.0.0.0": {
+      "Timberborn.SoilContaminationSystem/0.0.0.0": {
         "runtime": {
-          "UnityEngine.AnimationModule.dll": {
+          "Timberborn.SoilContaminationSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.MapEditorTickSystem/0.0.0.0": {
+      "Timberborn.NaturalResourcesMoisture/0.0.0.0": {
         "runtime": {
-          "Timberborn.MapEditorTickSystem.dll": {
+          "Timberborn.NaturalResourcesMoisture.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.Meshy/0.0.0.0": {
+      "Timberborn.BuilderPrioritySystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.Meshy.dll": {
+          "Timberborn.BuilderPrioritySystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "UnityEngine.InputModule/0.0.0.0": {
+      "Timberborn.RecoverableGoodSystem/0.0.0.0": {
         "runtime": {
-          "UnityEngine.InputModule.dll": {
+          "Timberborn.RecoverableGoodSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "UnityEngine.AudioModule/0.0.0.0": {
+      "Timberborn.BuilderHubSystem/0.0.0.0": {
         "runtime": {
-          "UnityEngine.AudioModule.dll": {
+          "Timberborn.BuilderHubSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.MapSystem/0.0.0.0": {
+      "Timberborn.BlockObjectAccesses/0.0.0.0": {
         "runtime": {
-          "Timberborn.MapSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.ErrorReporting/0.0.0.0": {
-        "runtime": {
-          "Timberborn.ErrorReporting.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.UILayoutSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.UILayoutSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.QuickNotificationSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.QuickNotificationSystem.dll": {
+          "Timberborn.BlockObjectAccesses.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -993,33 +1056,9 @@
           }
         }
       },
-      "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
+      "Timberborn.QuickNotificationSystem/0.0.0.0": {
         "runtime": {
-          "Unity.RenderPipelines.Universal.Runtime.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.MapIndexSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.MapIndexSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.GoodsUI/0.0.0.0": {
-        "runtime": {
-          "Timberborn.GoodsUI.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.EntityPanelSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.EntityPanelSystem.dll": {
+          "Timberborn.QuickNotificationSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1033,9 +1072,121 @@
           }
         }
       },
-      "Timberborn.SimulationSystem/0.0.0.0": {
+      "Timberborn.MapIndexSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.SimulationSystem.dll": {
+          "Timberborn.MapIndexSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.MapEditorTickSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.MapEditorTickSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.MapSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.MapSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.CameraSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.CameraSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "UnityEngine.AudioModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.AudioModule.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "UnityEngine.AnimationModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.AnimationModule.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "LINQtoCSV/1.5.0.0": {
+        "runtime": {
+          "LINQtoCSV.dll": {
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
+          }
+        }
+      },
+      "Timberborn.ExperimentalModeSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.ExperimentalModeSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.CommandLine/0.0.0.0": {
+        "runtime": {
+          "Timberborn.CommandLine.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BlockSystemUI/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BlockSystemUI.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BuildingRange/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BuildingRange.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Meshy/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Meshy.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.ErrorReporting/0.0.0.0": {
+        "runtime": {
+          "Timberborn.ErrorReporting.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.UIFormatters/0.0.0.0": {
+        "runtime": {
+          "Timberborn.UIFormatters.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "UnityEngine.InputModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.InputModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1044,6 +1195,102 @@
       "Timberborn.WeatherSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.WeatherSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SimulationSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SimulationSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.NaturalResourcesLifecycle/0.0.0.0": {
+        "runtime": {
+          "Timberborn.NaturalResourcesLifecycle.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BlockSystemNavigation/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BlockSystemNavigation.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.AreaSelectionSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.AreaSelectionSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SoilBarrierSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SoilBarrierSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.WaterObjects/0.0.0.0": {
+        "runtime": {
+          "Timberborn.WaterObjects.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.UILayoutSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.UILayoutSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
+        "runtime": {
+          "Unity.RenderPipelines.Universal.Runtime.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.EntityPanelSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.EntityPanelSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.MeshyDTO/0.0.0.0": {
+        "runtime": {
+          "Timberborn.MeshyDTO.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "protobuf-net/2.4.0.0": {
+        "runtime": {
+          "protobuf-net.dll": {
+            "assemblyVersion": "2.4.0.0",
+            "fileVersion": "2.4.7.18"
+          }
+        }
+      },
+      "Timberborn.TooltipSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.TooltipSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1425,19 +1672,11 @@
           }
         }
       },
-      "Timberborn.MeshyDTO/0.0.0.0": {
+      "Timberborn.HazardousWeatherSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.MeshyDTO.dll": {
+          "Timberborn.HazardousWeatherSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "protobuf-net/2.4.0.0": {
-        "runtime": {
-          "protobuf-net.dll": {
-            "assemblyVersion": "2.4.0.0",
-            "fileVersion": "2.4.7.18"
           }
         }
       },
@@ -1468,30 +1707,6 @@
       "Unity.Burst/0.0.0.0": {
         "runtime": {
           "Unity.Burst.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.UIFormatters/0.0.0.0": {
-        "runtime": {
-          "Timberborn.UIFormatters.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.TooltipSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.TooltipSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.HazardousWeatherSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.HazardousWeatherSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1708,7 +1923,7 @@
     }
   },
   "libraries": {
-    "WorkerlessRecipe_HaulingFix/1.0.4": {
+    "WorkerlessRecipe_HaulingFix/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1743,12 +1958,42 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.BeaverBehavior/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BehaviorSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Buildings/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BuildingsBlocking/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.Common/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.Emptying/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.Goods/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Hauling/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1759,6 +2004,11 @@
       "sha512": ""
     },
     "Timberborn.Workshops/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.WorkSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1828,17 +2078,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.ConstructibleSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.GameDistricts/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Navigation/0.0.0.0": {
+    "Timberborn.TemplateSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1848,17 +2088,112 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.BuildingsBlocking/0.0.0.0": {
+    "Timberborn.NeedBehaviorSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.TemplateSystem/0.0.0.0": {
+    "Timberborn.TimeSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Characters/0.0.0.0": {
+    "Timberborn.NeedSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.GameDistricts/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Effects/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Beavers/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.WalkingSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.CharacterModelSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Planting/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.ReservableSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Yielding/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.ConstructionSites/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Demolishing/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.CharacterControlSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.MortalSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Carrying/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.DeathSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BeaverContaminationSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Wandering/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SleepSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.TickSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Metrics/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1868,7 +2203,102 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.ConstructibleSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BlockSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Core/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Navigation/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.TerrainSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Rendering/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Coordinates/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnityEngine.PhysicsModule/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.LevelVisibilitySystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SelectionSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SoundSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.PrefabSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Particles/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnityEngine.ParticleSystemModule/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.StatusSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.CoreSound/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Animations/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.Localization/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.LaborSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Characters/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1883,47 +2313,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Core/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.FeatureToggleSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Hauling/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.WorkSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Emptying/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BehaviorSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Carrying/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.TickSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.StatusSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1943,22 +2333,32 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.TimeSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.EnterableSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.WalkingSystem/0.0.0.0": {
+    "Timberborn.PrioritySystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.LaborSystem/0.0.0.0": {
+    "Timberborn.RelationSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BonusSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.WorkerTypes/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SlotSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1968,32 +2368,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Buildings/0.0.0.0": {
+    "Timberborn.SceneLoading/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.BlockSystem/0.0.0.0": {
+    "Timberborn.GameSceneLoading/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Beavers/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Bots/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.PreviewSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Coordinates/0.0.0.0": {
+    "Timberborn.PrefabOptimization/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2008,11 +2393,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.PrefabSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.SaveSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2023,47 +2403,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Animations/0.0.0.0": {
+    "Timberborn.Bots/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Rendering/0.0.0.0": {
+    "Timberborn.PreviewSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.ParticleSystemModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Particles/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.PrefabOptimization/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.SelectionSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "LINQtoCSV/1.5.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.ExperimentalModeSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BonusSystem/0.0.0.0": {
+    "Timberborn.GoodsUI/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2128,97 +2478,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.CommandLine/0.0.0.0": {
+    "Timberborn.LifeSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.PrioritySystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.RelationSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.CharacterModelSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Metrics/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.WorkerTypes/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.SoundSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.SlotSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.NeedSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.SceneLoading/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.GameSceneLoading/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.CharacterNavigation/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.CharacterMovementSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.CameraSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.TerrainSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.NeedBehaviorSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Effects/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BlockSystemUI/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BuildingRange/0.0.0.0": {
+    "Timberborn.NotificationSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2233,7 +2498,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.BeaverContaminationSystem/0.0.0.0": {
+    "Timberborn.CharacterMovementSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2243,72 +2508,57 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.PhysicsModule/0.0.0.0": {
+    "Timberborn.CharacterNavigation/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.LevelVisibilitySystem/0.0.0.0": {
+    "Timberborn.NaturalResourcesReproduction/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.CoreSound/0.0.0.0": {
+    "Timberborn.BuildingsNavigation/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.LifeSystem/0.0.0.0": {
+    "Timberborn.NaturalResources/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.NotificationSystem/0.0.0.0": {
+    "Timberborn.SoilMoistureSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.AnimationModule/0.0.0.0": {
+    "Timberborn.SoilContaminationSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.MapEditorTickSystem/0.0.0.0": {
+    "Timberborn.NaturalResourcesMoisture/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Meshy/0.0.0.0": {
+    "Timberborn.BuilderPrioritySystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.InputModule/0.0.0.0": {
+    "Timberborn.RecoverableGoodSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.AudioModule/0.0.0.0": {
+    "Timberborn.BuilderHubSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.MapSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.ErrorReporting/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.UILayoutSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.QuickNotificationSystem/0.0.0.0": {
+    "Timberborn.BlockObjectAccesses/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2318,22 +2568,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.MapIndexSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.GoodsUI/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.EntityPanelSystem/0.0.0.0": {
+    "Timberborn.QuickNotificationSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2343,12 +2578,142 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.SimulationSystem/0.0.0.0": {
+    "Timberborn.MapIndexSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.MapEditorTickSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.MapSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.CameraSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnityEngine.AudioModule/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnityEngine.AnimationModule/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LINQtoCSV/1.5.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.ExperimentalModeSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.CommandLine/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BlockSystemUI/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BuildingRange/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Meshy/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.ErrorReporting/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.UIFormatters/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnityEngine.InputModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "Timberborn.WeatherSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SimulationSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.NaturalResourcesLifecycle/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BlockSystemNavigation/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.AreaSelectionSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SoilBarrierSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.WaterObjects/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.UILayoutSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.EntityPanelSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.MeshyDTO/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "protobuf-net/2.4.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.TooltipSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2588,12 +2953,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.MeshyDTO/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "protobuf-net/2.4.0.0": {
+    "Timberborn.HazardousWeatherSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2614,21 +2974,6 @@
       "sha512": ""
     },
     "Unity.Burst/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.UIFormatters/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.TooltipSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.HazardousWeatherSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
