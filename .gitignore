@@ -519,3 +519,13 @@ Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.SoilMoistureSystem.
 Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.Wandering.dll
 Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.WaterObjects.dll
 Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.Yielding.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.Gathering.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.GenericStoreSystem.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.GoodStackSystem.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.Growing.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.NaturalResourcesLifecycleModelSystem.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.SimpleOutputBuildings.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.StockpilePrioritySystem.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.Stockpiles.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.StoreSystem.dll
+Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.YielderFinding.dll

@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "WorkerlessRecipe_HaulingFix/1.0.6": {
+      "WorkerlessRecipe_HaulingFix/1.0.9": {
         "dependencies": {
           "0Harmony": "2.9.0.0",
           "Bindito.Core": "1.0.0.0",
@@ -20,12 +20,22 @@
           "Timberborn.Buildings": "0.0.0.0",
           "Timberborn.BuildingsBlocking": "0.0.0.0",
           "Timberborn.Common": "0.0.0.0",
+          "Timberborn.DwellingSystem": "0.0.0.0",
           "Timberborn.Emptying": "0.0.0.0",
+          "Timberborn.Gathering": "0.0.0.0",
+          "Timberborn.GenericStoreSystem": "0.0.0.0",
           "Timberborn.Goods": "0.0.0.0",
+          "Timberborn.GoodStackSystem": "0.0.0.0",
           "Timberborn.Hauling": "0.0.0.0",
           "Timberborn.InventorySystem": "0.0.0.0",
+          "Timberborn.LaborSystem": "0.0.0.0",
+          "Timberborn.SimpleOutputBuildings": "0.0.0.0",
+          "Timberborn.StockpilePrioritySystem": "0.0.0.0",
+          "Timberborn.StoreSystem": "0.0.0.0",
           "Timberborn.Workshops": "0.0.0.0",
           "Timberborn.WorkSystem": "0.0.0.0",
+          "Timberborn.YielderFinding": "0.0.0.0",
+          "Timberborn.Yielding": "0.0.0.0",
           "UnityEngine.CoreModule": "0.0.0.0"
         },
         "runtime": {
@@ -120,6 +130,14 @@
           }
         }
       },
+      "Timberborn.DwellingSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.DwellingSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.Emptying/0.0.0.0": {
         "runtime": {
           "Timberborn.Emptying.dll": {
@@ -128,9 +146,33 @@
           }
         }
       },
+      "Timberborn.Gathering/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Gathering.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.GenericStoreSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.GenericStoreSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.Goods/0.0.0.0": {
         "runtime": {
           "Timberborn.Goods.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.GoodStackSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.GoodStackSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -152,6 +194,38 @@
           }
         }
       },
+      "Timberborn.LaborSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.LaborSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.SimpleOutputBuildings/0.0.0.0": {
+        "runtime": {
+          "Timberborn.SimpleOutputBuildings.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.StockpilePrioritySystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.StockpilePrioritySystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.StoreSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.StoreSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.Workshops/0.0.0.0": {
         "runtime": {
           "Timberborn.Workshops.dll": {
@@ -163,6 +237,22 @@
       "Timberborn.WorkSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.WorkSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.YielderFinding/0.0.0.0": {
+        "runtime": {
+          "Timberborn.YielderFinding.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Yielding/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Yielding.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -363,14 +453,6 @@
       "Timberborn.ReservableSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.ReservableSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.Yielding/0.0.0.0": {
-        "runtime": {
-          "Timberborn.Yielding.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -616,25 +698,25 @@
           }
         }
       },
-      "Timberborn.LaborSystem/0.0.0.0": {
+      "Timberborn.PopulationStatisticsSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.LaborSystem.dll": {
+          "Timberborn.PopulationStatisticsSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.Characters/0.0.0.0": {
+      "Timberborn.RelationSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.Characters.dll": {
+          "Timberborn.RelationSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Timberborn.AssetSystem/0.0.0.0": {
+      "Timberborn.EnterableSystem/0.0.0.0": {
         "runtime": {
-          "Timberborn.AssetSystem.dll": {
+          "Timberborn.EnterableSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -648,9 +730,81 @@
           }
         }
       },
+      "Timberborn.Characters/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Characters.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.NaturalResourcesLifecycleModelSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.NaturalResourcesLifecycleModelSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.NaturalResourcesLifecycle/0.0.0.0": {
+        "runtime": {
+          "Timberborn.NaturalResourcesLifecycle.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Growing/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Growing.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BuildingRange/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BuildingRange.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.PrefabOptimization/0.0.0.0": {
+        "runtime": {
+          "Timberborn.PrefabOptimization.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.AssetSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.AssetSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Timberborn.FeatureToggleSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.FeatureToggleSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.InventoryNeedSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.InventoryNeedSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.Stockpiles/0.0.0.0": {
+        "runtime": {
+          "Timberborn.Stockpiles.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -672,33 +826,9 @@
           }
         }
       },
-      "Timberborn.InventoryNeedSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.InventoryNeedSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.EnterableSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.EnterableSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.PrioritySystem/0.0.0.0": {
         "runtime": {
           "Timberborn.PrioritySystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.RelationSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.RelationSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -728,6 +858,14 @@
           }
         }
       },
+      "Timberborn.BuildingsNavigation/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BuildingsNavigation.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "UnityEngine.SharedInternalsModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.SharedInternalsModule.dll": {
@@ -747,14 +885,6 @@
       "Timberborn.GameSceneLoading/0.0.0.0": {
         "runtime": {
           "Timberborn.GameSceneLoading.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.PrefabOptimization/0.0.0.0": {
-        "runtime": {
-          "Timberborn.PrefabOptimization.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -936,14 +1066,6 @@
           }
         }
       },
-      "Timberborn.DwellingSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.DwellingSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.CharacterMovementSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.CharacterMovementSystem.dll": {
@@ -971,14 +1093,6 @@
       "Timberborn.NaturalResourcesReproduction/0.0.0.0": {
         "runtime": {
           "Timberborn.NaturalResourcesReproduction.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BuildingsNavigation/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BuildingsNavigation.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1064,14 +1178,6 @@
           }
         }
       },
-      "Timberborn.PopulationStatisticsSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.PopulationStatisticsSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.MapIndexSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.MapIndexSystem.dll": {
@@ -1136,25 +1242,9 @@
           }
         }
       },
-      "Timberborn.CommandLine/0.0.0.0": {
-        "runtime": {
-          "Timberborn.CommandLine.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Timberborn.BlockSystemUI/0.0.0.0": {
         "runtime": {
           "Timberborn.BlockSystemUI.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BuildingRange/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BuildingRange.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1168,9 +1258,33 @@
           }
         }
       },
-      "Timberborn.ErrorReporting/0.0.0.0": {
+      "Timberborn.CommandLine/0.0.0.0": {
         "runtime": {
-          "Timberborn.ErrorReporting.dll": {
+          "Timberborn.CommandLine.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.EntityPanelSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.EntityPanelSystem.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.BlockSystemNavigation/0.0.0.0": {
+        "runtime": {
+          "Timberborn.BlockSystemNavigation.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.AreaSelectionSystem/0.0.0.0": {
+        "runtime": {
+          "Timberborn.AreaSelectionSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1179,6 +1293,14 @@
       "Timberborn.UIFormatters/0.0.0.0": {
         "runtime": {
           "Timberborn.UIFormatters.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Timberborn.ErrorReporting/0.0.0.0": {
+        "runtime": {
+          "Timberborn.ErrorReporting.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1203,30 +1325,6 @@
       "Timberborn.SimulationSystem/0.0.0.0": {
         "runtime": {
           "Timberborn.SimulationSystem.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.NaturalResourcesLifecycle/0.0.0.0": {
-        "runtime": {
-          "Timberborn.NaturalResourcesLifecycle.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.BlockSystemNavigation/0.0.0.0": {
-        "runtime": {
-          "Timberborn.BlockSystemNavigation.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.AreaSelectionSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.AreaSelectionSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1259,14 +1357,6 @@
       "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
         "runtime": {
           "Unity.RenderPipelines.Universal.Runtime.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Timberborn.EntityPanelSystem/0.0.0.0": {
-        "runtime": {
-          "Timberborn.EntityPanelSystem.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1923,7 +2013,7 @@
     }
   },
   "libraries": {
-    "WorkerlessRecipe_HaulingFix/1.0.6": {
+    "WorkerlessRecipe_HaulingFix/1.0.9": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1983,12 +2073,32 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.DwellingSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.Emptying/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.Gathering/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.GenericStoreSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.Goods/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.GoodStackSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2003,12 +2113,42 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.LaborSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.SimpleOutputBuildings/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.StockpilePrioritySystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.StoreSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.Workshops/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "Timberborn.WorkSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.YielderFinding/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Yielding/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2134,11 +2274,6 @@
       "sha512": ""
     },
     "Timberborn.ReservableSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.Yielding/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2293,17 +2428,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.LaborSystem/0.0.0.0": {
+    "Timberborn.PopulationStatisticsSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.Characters/0.0.0.0": {
+    "Timberborn.RelationSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.AssetSystem/0.0.0.0": {
+    "Timberborn.EnterableSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2313,7 +2448,52 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.Characters/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.NaturalResourcesLifecycleModelSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.NaturalResourcesLifecycle/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Growing/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BuildingRange/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.PrefabOptimization/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.AssetSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Timberborn.FeatureToggleSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.InventoryNeedSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.Stockpiles/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2328,22 +2508,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.InventoryNeedSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.EnterableSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.PrioritySystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.RelationSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2363,6 +2528,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Timberborn.BuildingsNavigation/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "UnityEngine.SharedInternalsModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2374,11 +2544,6 @@
       "sha512": ""
     },
     "Timberborn.GameSceneLoading/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.PrefabOptimization/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2493,11 +2658,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.DwellingSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.CharacterMovementSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2514,11 +2674,6 @@
       "sha512": ""
     },
     "Timberborn.NaturalResourcesReproduction/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BuildingsNavigation/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2573,11 +2728,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.PopulationStatisticsSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.MapIndexSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -2618,17 +2768,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.CommandLine/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timberborn.BlockSystemUI/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BuildingRange/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2638,12 +2778,32 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Timberborn.ErrorReporting/0.0.0.0": {
+    "Timberborn.CommandLine/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.EntityPanelSystem/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.BlockSystemNavigation/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.AreaSelectionSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "Timberborn.UIFormatters/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Timberborn.ErrorReporting/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2659,21 +2819,6 @@
       "sha512": ""
     },
     "Timberborn.SimulationSystem/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.NaturalResourcesLifecycle/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.BlockSystemNavigation/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.AreaSelectionSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -2694,11 +2839,6 @@
       "sha512": ""
     },
     "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Timberborn.EntityPanelSystem/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

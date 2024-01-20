@@ -4,15 +4,19 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>WorkerlessRecipe_HaulingFix</RootNamespace>
     <Nullable>enable</Nullable>
-	<Description>modifiable waterpump pipe max lenght</Description>
+	<Description>Fixing hauling to no-worker buildings, via the "Prioritize by haulers" ingame functionality</Description>
     <Product>TBMPL</Product>
     <AssemblyName>WorkerlessRecipe_HaulingFix</AssemblyName>
     <!-- The prefix should match the prefix in the attribute -->
     <AssemblyDirName>TBMPL_$(AssemblyName)</AssemblyDirName>
     <!-- The version should match the version in the attribute -->
-    <Version>1.0.6</Version>
+    <Version>1.0.9</Version>
 
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="more_involved_patch-abandoned.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -48,8 +52,20 @@
     <Reference Include="Timberborn.Common">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Timberborn.DwellingSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.DwellingSystem.dll</HintPath>
+    </Reference>
     <Reference Include="Timberborn.Emptying">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Emptying.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Gathering">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Gathering.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.GenericStoreSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.GenericStoreSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.GoodStackSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.GoodStackSystem.dll</HintPath>
     </Reference>
     <Reference Include="Timberborn.Hauling">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Hauling.dll</HintPath>
@@ -60,11 +76,29 @@
     <Reference Include="Timberborn.Goods">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Goods.dll</HintPath>
     </Reference>
+    <Reference Include="Timberborn.LaborSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.LaborSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SimpleOutputBuildings">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.SimpleOutputBuildings.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.StockpilePrioritySystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.StockpilePrioritySystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.StoreSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.StoreSystem.dll</HintPath>
+    </Reference>
     <Reference Include="Timberborn.Workshops">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Workshops.dll</HintPath>
     </Reference>
     <Reference Include="Timberborn.WorkSystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.WorkSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.YielderFinding">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.YielderFinding.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Yielding">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Yielding.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\Timberborn_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
