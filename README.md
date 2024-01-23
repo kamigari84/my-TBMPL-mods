@@ -1,6 +1,6 @@
 # TBMPL_mods
  Some code-only mods for Timberborn using TBMPL
 
-Can be found on mod.io at <br/>
-Extra Pipe Extension @ https://mod.io/g/timberborn/m/tbmplwaterpumppipeextension?preview=2920e1ad486e4a30dcb9c3593757d2c6 <br/>
-Hauling Patch @ https://mod.io/g/timberborn/m/tbmplworkerlessrecipehaulingfix
+NOTE: Hauling Patch, for reason unknown, breaks saves with any Gathering Prioritizations. Both saves made before the installation, with the patch on, and saves made whilst using the patch, with the patch removed.
+
+NOTE: If you're using my PipeExt mod, you should probably switch to Wireless Pumps now that it's updated for TB U5
