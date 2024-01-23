@@ -529,3 +529,7 @@ Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.StockpilePrioritySy
 Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.Stockpiles.dll
 Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.StoreSystem.dll
 Fix Workerless Recipes/bin/Release/netstandard2.1/Timberborn.YielderFinding.dll
+Timberborn.Workshops
+Timberborn.WorkshopsEffects
+Timberborn.WorkSystem
+Fix Workerless Recipes/prioritize.cs

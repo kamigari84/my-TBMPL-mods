@@ -13,7 +13,7 @@ using TBMPLCore.Plugin.Logs;
 namespace WorkerlessRecipe_HaulingFix
 {
     [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/version.json")]
-    [TBMPL(TBMPL.Prefix + "Hauling2RecipeFix", "Improve /Prioritize by Haulers/,\n especially for workerless manufacturers", "1.0.9")]
+    [TBMPL(TBMPL.Prefix + "Hauling2RecipeFix", "Improve /Prioritize by Haulers/,\n especially for workerless manufacturers", "1.0.9.1")]
     internal sealed class EP : EntryPoint
     {
         public static new EPConfig Config { get; }
@@ -21,11 +21,23 @@ namespace WorkerlessRecipe_HaulingFix
         // Creates the plugin configuration
         protected override IConfig GetConfig()
         {
-            return new EPConfig { };
+            return new EPConfig
+            {
+                threshold = AddKey("Settings", "threshold", 0.05f, "Base priority threshold for appying prioritization"), // float default value 0.05
+                strength = AddKey("Settings", "strength", 0.75f, "Prioritization strength"), // int default value 0.75
+                workereless = AddKey("Settings", "workereless", 0.75f, "Extra Prioritization strength for workerless manufcaturies \n\t set to 0 to disable"), // int default value 0.75
+
+            };
         }
 
     }
-    internal sealed class EPConfig : BaseConfig {}
+    internal sealed class EPConfig : BaseConfig
+    {
+        public float threshold { get; set; }
+        public float strength { get; set; }
+        public float workereless { get; set; }
+
+    }
 
 
     namespace Patches
@@ -33,32 +45,21 @@ namespace WorkerlessRecipe_HaulingFix
         [HarmonyPatch]
         internal static class HaulingPatch
         {
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(HaulCandidate), "PrioritizeAndValidate", new Type[] {
+            [HarmonyPostfix]
+            [HarmonyPatch(typeof(HaulCandidate), "PrioritizeAndValidate", new Type[] {
                typeof(float)
     })]
-        private static bool HaulCandidate_PrioritizeAndValidate_Patch(float weight, HaulPrioritizable ____haulPrioritizable, ref float __result)
+            private static void HaulCandidate_PrioritizeAndValidate_Patch(float weight, HaulPrioritizable ____haulPrioritizable, ref float __result)
             {
-                float w;
-                    Log.Debug("initial weight:" + weight);
-                    if (weight < 0f || weight > 1f)
-                    {
-                        Log.Debug("weight should be between 0 and 1!");
-                        //weight = Mathf.Clamp01(weight);
-                    }
-                    w = weight;
-                    if (____haulPrioritizable.Prioritized && (double)weight >= 0.05f)
-                    {
-                        w += 0.75f;
-                    }
-                    if (____haulPrioritizable.GameObjectFast.TryGetComponent<ProductionIncreaser>(out var increaser) && (double)weight >= 0.05f)
-                    {
-                        w += 0.75f;
-                    }
-                    w = Mathf.Clamp(w, 0f, 2f);
-                    Log.Debug("validated weight: " + w);
-                    __result = w;
-                    return false;
+                Log.Debug("initial weight:" + weight);
+                __result = (____haulPrioritizable.GameObjectFast.TryGetComponent<Manufactory>(out _) && weight > 0f) ? Mathf.Clamp(weight, 0.6f, 1f) : weight;
+                Log.Debug("checked if HaulCandidate is a Manufactory ... tmp result" + __result);
+                __result += (____haulPrioritizable.Prioritized && __result >= EP.Config.threshold) ? EP.Config.strength : 0f;
+                Log.Debug("checked if HaulCandidate is meant to be Prioritized ... tmp result" + __result);
+                __result += (EP.Config.workereless > 0f && ____haulPrioritizable.GameObjectFast.TryGetComponent<ProductionIncreaser>(out _)) ? EP.Config.workereless : 0f;
+                Log.Debug("checked if HaulCandidate is UnManned (has NeedIncreaser) ... tmp result" + __result);
+                weight = Mathf.Clamp(weight, 0f, 2f);
+                Log.Debug("updated weight: " + weight);
             }
         }
     }
