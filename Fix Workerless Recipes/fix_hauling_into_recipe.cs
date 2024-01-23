@@ -52,7 +52,7 @@ namespace WorkerlessRecipe_HaulingFix
             private static void HaulCandidate_PrioritizeAndValidate_Patch(float weight, HaulPrioritizable ____haulPrioritizable, ref float __result)
             {
                 Log.Debug("initial weight:" + weight);
-                __result = (____haulPrioritizable.GameObjectFast.TryGetComponent<Manufactory>(out _) && weight > 0f) ? Mathf.Clamp(weight, 0.6f, 1f) : weight;
+                __result = (____haulPrioritizable.GameObjectFast.TryGetComponent<Manufactory>(out _) && weight > 0f) ? Mathf.Clamp(weight, EP.Config.threshold, 1f) : weight;
                 Log.Debug("checked if HaulCandidate is a Manufactory ... tmp result" + __result);
                 __result += (____haulPrioritizable.Prioritized && __result >= EP.Config.threshold) ? EP.Config.strength : 0f;
                 Log.Debug("checked if HaulCandidate is meant to be Prioritized ... tmp result" + __result);
