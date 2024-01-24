@@ -1,6 +1,6 @@
 {
-  "LatestVersion": "1.0.9.1",
-  "Message": "Pre-Release - needs testing\n\tREPORT EVERYTHING OFF",
+  "LatestVersion": "1.0.9.2",
+  "Message": "Pre-Release - needs testing\n\tREPORT EVERYTHING",
   "AlwaysShowMessage": false,
   "AutoUpdate": true,
   "LatestDll": "https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/bin/Release/netstandard2.1/WorkerlessRecipe_HaulingFix.dll"
