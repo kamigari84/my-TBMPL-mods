@@ -12,7 +12,7 @@ using Timberborn.Workshops;
 namespace WorkerlessRecipe_HaulingFix
 {
     //    [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/version.json")]
-    [TBMPL(TBMPL.Prefix + "HaulingImproved", "Improve /Prioritize by Haulers/ LITE", "0.0.1")]
+    [TBMPL(TBMPL.Prefix + "HaulingImproved", "Improve /Prioritize by Haulers/ LITE", "0.0.2")]
     internal sealed class EP : EntryPoint
     {
         public static new EPConfig Config { get; }

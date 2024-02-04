@@ -64,6 +64,9 @@
     <Reference Include="Timberborn.Common">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Timberborn.ConstructibleSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.ConstructibleSystem.dll</HintPath>
+    </Reference>
     <Reference Include="Timberborn.DwellingSystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.DwellingSystem.dll</HintPath>
     </Reference>
@@ -72,6 +75,9 @@
     </Reference>
     <Reference Include="Timberborn.EnterableSystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.EnterableSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntitySystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.EntitySystem.dll</HintPath>
     </Reference>
     <Reference Include="Timberborn.FactionSystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.FactionSystem.dll</HintPath>
@@ -100,6 +106,9 @@
     <Reference Include="Timberborn.LaborSystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.LaborSystem.dll</HintPath>
     </Reference>
+    <Reference Include="Timberborn.Persistence">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Persistence.dll</HintPath>
+    </Reference>
     <Reference Include="Timberborn.PrioritySystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.PrioritySystem.dll</HintPath>
     </Reference>
@@ -111,6 +120,12 @@
     </Reference>
     <Reference Include="Timberborn.StoreSystem">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.StoreSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TickSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.TickSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TimeSystem">
+      <HintPath>..\..\Timberborn_Data\Managed\Timberborn.TimeSystem.dll</HintPath>
     </Reference>
     <Reference Include="Timberborn.Workshops">
       <HintPath>..\..\Timberborn_Data\Managed\Timberborn.Workshops.dll</HintPath>
