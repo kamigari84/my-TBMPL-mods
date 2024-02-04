@@ -40,7 +40,7 @@ namespace WorkerlessRecipe_HaulingFix
                 if (____haulPrioritizable.GameObjectFast.TryGetComponent<ProductionIncreaser>(out _))
                 {
                     Log.Debug("is Workerless");
-                    __result = 2f;
+                    __result += 2f;
                 }
                 if (____haulPrioritizable.Prioritized)
                 {
