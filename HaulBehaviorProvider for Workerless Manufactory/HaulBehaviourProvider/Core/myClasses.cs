@@ -1,20 +1,17 @@
 ﻿using Bindito.Core;
 using System.Collections.Generic;
-using System.Linq;
 using Timberborn.Attractions;
 using Timberborn.BaseComponentSystem;
 using Timberborn.BuildingsBlocking;
 using Timberborn.Emptying;
 using Timberborn.GoodConsumingBuildingSystem;
-using Timberborn.Goods;
 using Timberborn.Hauling;
 using Timberborn.InventorySystem;
 using Timberborn.Workshops;
 using Timberborn.WorkSystem;
 using UnityDev.Utils.LogUtilsLite;
-using UnityEngine;
 
-namespace HaulBehaviorProvider_for_Workerless_Manufactory.HaulBehaviourProvider.Core
+namespace NoWorkerHaul.HaulBehaviourProvider.Core
 {
 
     public class ManufactoryHaul : BaseComponent, IHaulBehaviorProvider
@@ -49,9 +46,9 @@ namespace HaulBehaviorProvider_for_Workerless_Manufactory.HaulBehaviourProvider.
             _fillInputWorkplaceBehavior = GetComponentFast<FillInputWorkplaceBehavior>();
             _emptyOutputWorkplaceBehavior = GetComponentFast<EmptyOutputWorkplaceBehavior>();
             NoWorkersManufactory = GetComponentFast<ProductionIncreaser>() != null;
-            FillingThreshold = ModEntry.Config.FillingThreshold;
-            EmptyingThreshold = ModEntry.Config.EmptyingThreshold;
-            NoWorkerBonus = ModEntry.Config.NoWorkerBonus;
+            FillingThreshold = EP.FillingThreshold;
+            EmptyingThreshold = EP.EmptyingThreshold;
+            NoWorkerBonus = EP.Workerless_floor;
         }
 
         public void GetWeightedBehaviors(IList<WeightedBehavior> weightedBehaviors)
@@ -134,9 +131,9 @@ namespace HaulBehaviorProvider_for_Workerless_Manufactory.HaulBehaviourProvider.
                     float weight = 1f - _inventoryFillCalculator.GetInputFillPercentage(enabledInventory);
                         if (weight > 0f)
                         {
-                            if (NoWorkersManufactory && weight >= ModEntry.Config.FillingThreshold)
+                            if (NoWorkersManufactory && weight >= EP.FillingThreshold)
                             {
-                                weight += ModEntry.Config.NoWorkerBonus;
+                                weight += EP.Workerless_floor;
                             }
 
                             weightedBehaviors.Add(new WeightedBehavior(weight, _fillInputWorkplaceBehavior));

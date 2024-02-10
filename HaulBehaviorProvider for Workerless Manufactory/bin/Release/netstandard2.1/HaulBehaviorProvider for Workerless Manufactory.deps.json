@@ -9,20 +9,41 @@
     ".NETStandard,Version=v2.1/": {
       "HaulBehaviorProvider for Workerless Manufactory/0.0.1": {
         "dependencies": {
+          "BepInEx.BaseLib": "5.4.21",
+          "BepInEx.Core": "5.4.21",
           "TimberApi": "0.6.5"
         },
         "runtime": {
           "HaulBehaviorProvider for Workerless Manufactory.dll": {}
         }
       },
-      "Lib.Harmony/2.2.2": {
+      "BepInEx.BaseLib/5.4.21": {
         "runtime": {
-          "lib/net45/0Harmony.dll": {
-            "assemblyVersion": "2.2.2.0",
-            "fileVersion": "2.2.2.0"
+          "lib/netstandard2.0/BepInEx.dll": {
+            "assemblyVersion": "5.4.21.0",
+            "fileVersion": "5.4.21.0"
           }
         }
       },
+      "BepInEx.Core/5.4.21": {
+        "dependencies": {
+          "BepInEx.BaseLib": "5.4.21",
+          "HarmonyX": "2.7.0"
+        }
+      },
+      "HarmonyX/2.7.0": {
+        "dependencies": {
+          "MonoMod.RuntimeDetour": "21.12.13.1",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/0Harmony.dll": {
+            "assemblyVersion": "2.7.0.0",
+            "fileVersion": "2.7.0.0"
+          }
+        }
+      },
+      "Lib.Harmony/2.2.2": {},
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Mono.Cecil/0.11.4": {
@@ -42,6 +63,24 @@
           "lib/netstandard2.0/Mono.Cecil.dll": {
             "assemblyVersion": "0.11.4.0",
             "fileVersion": "0.11.4.0"
+          }
+        }
+      },
+      "MonoMod.RuntimeDetour/21.12.13.1": {
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "MonoMod.Utils": "22.5.1.1",
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.7.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Reflection.TypeExtensions": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoMod.RuntimeDetour.dll": {
+            "assemblyVersion": "21.12.13.1",
+            "fileVersion": "21.12.13.1"
           }
         }
       },
@@ -267,6 +306,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Reflection.Emit/4.7.0": {},
       "System.Reflection.Emit.ILGeneration/4.7.0": {},
       "System.Reflection.Emit.Lightweight/4.7.0": {},
       "System.Reflection.Extensions/4.3.0": {
@@ -1930,6 +1970,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BepInEx.BaseLib/5.4.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IRgoMyJGoBW+uGR0C68L8WeRIMRnyL2RueOUDUTUgom2aiyltaxBkMydjmvkc+f3hZBa6ZLMlEF6bozNORmOyg==",
+      "path": "bepinex.baselib/5.4.21",
+      "hashPath": "bepinex.baselib.5.4.21.nupkg.sha512"
+    },
+    "BepInEx.Core/5.4.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NMUPlbHTTfJ+qIQCI90uIvjuUQ4wnwt4cpRsK3ItBh1DhsWFzAHXNiZjBxZkPysljEKQ2iu89sxMTga4bxBXVQ==",
+      "path": "bepinex.core/5.4.21",
+      "hashPath": "bepinex.core.5.4.21.nupkg.sha512"
+    },
+    "HarmonyX/2.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lec/SkduQspMa3Pi/nM/NSvA84Za8HCCWA8ybdToKiTqnBZa+JC5g6rxoFQCg/1vNuYcvjy77edePZzIEsRmvw==",
+      "path": "harmonyx/2.7.0",
+      "hashPath": "harmonyx.2.7.0.nupkg.sha512"
+    },
     "Lib.Harmony/2.2.2": {
       "type": "package",
       "serviceable": true,
@@ -1957,6 +2018,13 @@
       "sha512": "sha512-IC1h5g0NeJGHIUgzM1P82ld57knhP0IcQfrYITDPXlNpMYGUrsG5TxuaWTjaeqDNQMBDNZkB8L0rBnwsY6JHuQ==",
       "path": "mono.cecil/0.11.4",
       "hashPath": "mono.cecil.0.11.4.nupkg.sha512"
+    },
+    "MonoMod.RuntimeDetour/21.12.13.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-65mB+bHjT6UCGCgO+/pYhpuGPf96rQ1Whwkut/x7cqVIW0DTndDFyWc/3bngzhnY/Y6IYtBMlXsU2ATq+CxpHg==",
+      "path": "monomod.runtimedetour/21.12.13.1",
+      "hashPath": "monomod.runtimedetour.21.12.13.1.nupkg.sha512"
     },
     "MonoMod.Utils/22.5.1.1": {
       "type": "package",
@@ -2090,6 +2158,13 @@
       "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
     },
     "System.Reflection.Emit.ILGeneration/4.7.0": {
       "type": "package",

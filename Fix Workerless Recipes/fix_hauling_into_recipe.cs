@@ -1,46 +1,80 @@
-using TBMPLCore.Plugin;
-using TBMPLCore.Plugin.Attributes;
-using TBMPLCore.Plugin.Config;
 using HarmonyLib;
 using System;
 using Timberborn.Workshops;
 using Timberborn.Hauling;
 using Timberborn.WorkSystem;
+using Timberborn.Attractions;
+using Timberborn.GoodConsumingBuildingSystem;
+using BepInEx;
+using BepInEx.Configuration;
+using TimberApi.ModSystem;
+using TimberApi.ConsoleSystem;
+using System.IO;
+using File = System.IO.File;
 
 
 namespace WorkerlessRecipe_HaulingFix
 {
-    [TBMPLVersionCheck("https://github.com/kamigari84/my-TBMPL-mods/raw/update5/Fix%20Workerless%20Recipes/version.json")]
-    [TBMPL(TBMPL.Prefix + "Hauling2RecipeFix", "Improve /Prioritize by Haulers/", "1.0.9.4")]
-    internal sealed class EP : EntryPoint
+    [BepInPlugin(EP.mod_guid, EP.mod_desc, EP.mod_version)]
+    public class EP : BaseUnityPlugin, IModEntrypoint
     {
-        public static new EPConfig Config { get; }
+        private const string mod_version = "1.0.9.8";
+        private const string mod_guid = "Hauling2RecipeFix";
+        private const string mod_desc = "Improve /Prioritize by Haulers/";
+        private static ConfigEntry<float> _Prioritize_threshold;
+        private static ConfigEntry<float> _Prioritize_strength;
+        private static ConfigEntry<float> _Workerless_floor;
+        private static ConfigEntry<bool> _Workerless_toggle;
+        private static ConfigEntry<bool> _Workplace_deprioritize;
+        private static Harmony harmony = new Harmony(EP.mod_guid);
+        public static float Prioritize_threshold { get => _Prioritize_threshold.Value; private set => _Prioritize_threshold.Value = value; }
+        public static float Prioritize_strength { get => _Prioritize_strength.Value; private set => _Prioritize_strength.Value = value; }
+        public static float Workerless_floor { get => _Workerless_floor.Value; private set => _Workerless_floor.Value = value; }
+        public static bool Workerless_toggle { get => _Workerless_toggle.Value; private set => _Workerless_toggle.Value = value; }
+        public static bool Workplace_deprioritize { get => _Workplace_deprioritize.Value; private set => _Workplace_deprioritize.Value = value; }
 
-        // Creates the plugin configuration
-        protected override IConfig GetConfig()
+        public void Awake()
         {
-            return new EPConfig
+            _Prioritize_threshold = Config.Bind("/Prioritize by Haulers/ Settings",      // The section under which the option is shown
+                                         "threshold",  // The key of the configuration option in the configuration file
+                                         0.005f, // The default value
+                                         new ConfigDescription($"Threshold for applying /Prioritize by Haulers/\n Current value: {_Prioritize_threshold.Value}", new AcceptableValueRange<float>(0f, 1f))
+                                         ); // Description of the option to show in the config file
+            _Prioritize_strength = Config.Bind("/Prioritize by Haulers/ Settings",      // The section under which the option is shown
+                                         "strength",  // The key of the configuration option in the configuration file
+                                         1.1f, // The default value
+                                         "Strength of /Prioritize by Haulers/"); // Description of the option to show in the config file
+            _Workerless_toggle = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "enable",
+                                             true,
+                                             "Give special treatment to Workerless Manufactories ? ");
+            _Workerless_floor = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "floor",
+                                             1.2f,
+                                             "For NoWorker buildings, alway increase 'priority' by ... ");
+            _Workplace_deprioritize = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "lower",
+                                             false,
+                                             "For potentially NoWorker buildings, reduce workplace priority to lowest ? ");
+            var TAPI_mod_declaration = Path.Combine(Paths.PluginPath, "mod.json");
+            if (!File.Exists(TAPI_mod_declaration))
             {
-                Prioritize_threshold = AddKey("/Prioritize by Haulers/ Settings", "threshold", 0.25f, "Base priority threshold for appying prioritization"), // float default value 0.25
-                Prioritize_strength = AddKey("/Prioritize by Haulers/ Settings", "strength", 1.1f, "Prioritization strength to be applied with ingame toggle"), // float default value 1.1
-                Workerless_toggle = AddKey("Workerless Manufactory Hauling Settings", "enable", true, "Give special treatment to Workerless Manufactories?"), // bool default value true
-                Workerless_floor = AddKey("Workerless Manufactory Hauling Settings", "floor", 1.2f, "For Workerless Manufactories, always increase prioritization weight by \n\tshould be >= threshold"), // float default value 1.2
-                Workplace_deprioritize = AddKey("Workerless Manufactory Hauling Settings", "lower", true, "Set Workplace Priority of potentianlly-workerless Manufactories to lowest?"), // bool default value true
-
-            };
+                File.WriteAllText(TAPI_mod_declaration,
+                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
+                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
+                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
+                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
+                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
+                                  $"  \"EntryDll\": \"{Path.Combine(Paths.PluginPath, GetType().Namespace + ".dll")}\", // Optional. The entry dll if the mod has custom code\r\n" +
+                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
+                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
+            }
         }
-
+        public void Entry(IMod mod, IConsoleWriter consoleWriter)
+        {
+            harmony.PatchAll();
+        }
     }
-    internal sealed class EPConfig : BaseConfig
-    {
-        public float Prioritize_threshold { get; set; }
-        public float Prioritize_strength { get; set; }
-        public float Workerless_floor { get; set; }
-        public bool Workerless_toggle { get; set; }
-        public bool Workplace_deprioritize { get; set; }
-    }
-
-
     namespace Patches
     {
         [HarmonyPatch]
@@ -57,20 +91,19 @@ namespace WorkerlessRecipe_HaulingFix
                 ref float __result)
             {
                 __result = weight;
-                if (__result == 0)
+                bool Appliable = ____haulPrioritizable.GameObjectFast.TryGetComponent<ProductionIncreaser>(out _) || (____haulPrioritizable.GameObjectFast.TryGetComponent<GoodConsumingBuilding>(out _) && ____haulPrioritizable.GameObjectFast.TryGetComponent<Workplace>(out _)) || ____haulPrioritizable.GameObjectFast.TryGetComponent<GoodConsumingAttraction>(out _);
+                if (__result != 0)
                 {
-                    return false;
-                }
+                    if (EP.Workerless_toggle && Appliable)
+                    {
+                        __result += EP.Workerless_floor;
+                    }
 
-                if (EP.Config.Workerless_toggle && ____haulPrioritizable.GameObjectFast.TryGetComponent<ProductionIncreaser>(out _))
-                {
-                    __result += EP.Config.Workerless_floor;
-                }
+                    if ((____haulPrioritizable.Prioritized && (__result >= EP.Prioritize_threshold)))
+                    {
+                        __result += EP.Prioritize_strength;
+                    }
 
-
-                if ((____haulPrioritizable.Prioritized && (__result >= EP.Config.Prioritize_threshold)))
-                {
-                    __result += EP.Config.Prioritize_strength;
                 }
 
                 return false;
@@ -80,7 +113,7 @@ namespace WorkerlessRecipe_HaulingFix
             [HarmonyPatch(typeof(ProductionIncreaser), "OnEnterFinishedState")]
             private static void DePrioritizer(Manufactory ____manufactory)
             {
-                if (EP.Config.Workplace_deprioritize && ____manufactory.GameObjectFast.TryGetComponent<WorkplacePriority>(out var priority))
+                if (EP.Workplace_deprioritize && ____manufactory.GameObjectFast.TryGetComponent<WorkplacePriority>(out var priority))
                 {
                     priority.SetPriority(Timberborn.PrioritySystem.Priority.VeryLow);
                 }

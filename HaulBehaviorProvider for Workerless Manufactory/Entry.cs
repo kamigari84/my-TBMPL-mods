@@ -1,56 +1,84 @@
-﻿using HarmonyLib;
-using HaulBehaviorProvider_for_Workerless_Manufactory.HaulBehaviourProvider.Core;
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
+﻿using BepInEx;
+using BepInEx.Configuration;
+using HarmonyLib;
+using NoWorkerHaul.HaulBehaviourProvider.Core;
+using System.IO;
 using System.Reflection;
-using System.Xml.Linq;
-using TimberApi.ConfigSystem;
 using TimberApi.ConsoleSystem;
 using TimberApi.ModSystem;
-using Timberborn.BuildingsBlocking;
-using Timberborn.Common;
 using Timberborn.Emptying;
 using Timberborn.GoodConsumingBuildingSystem;
 using Timberborn.Hauling;
-using Timberborn.InventorySystem;
 using Timberborn.TemplateSystem;
 using Timberborn.Workshops;
 using Timberborn.WorkSystem;
-using UnityDev.Utils.LogUtilsLite;
-using UnityEngine.UIElements.Collections;
 
 
-namespace HaulBehaviorProvider_for_Workerless_Manufactory
+namespace NoWorkerHaul
 {
-    public class ModEntry : IModEntrypoint
-    {
-        public static NoWorkerHaulConfig Config;
 
+    [BepInPlugin(EP.mod_guid, EP.mod_desc, EP.mod_version)]
+    public class EP : BaseUnityPlugin, IModEntrypoint
+    {
+        private const string mod_version = "0.9.0";
+        private const string mod_guid = "NoWorkerHaul";
+        private const string mod_desc = "Extra hauling priority for NoWorker good-consuming/producing buildings";
+        private static ConfigEntry<float> _Workerless_floor;
+        private static ConfigEntry<float> _FillingThreshold;
+        private static ConfigEntry<float> _EmptyingThreshold;
+
+        private static ConfigEntry<bool> _Workerless_toggle;
+        private static ConfigEntry<bool> _RemoveUnneededWorkplaces;
+        private static Harmony harmony = new Harmony(EP.mod_guid);
+
+        public static float Workerless_floor { get => _Workerless_floor.Value; private set => _Workerless_floor.Value = value; }
+        public static float FillingThreshold { get => _FillingThreshold.Value; private set => _FillingThreshold.Value = value; }
+
+        public static float EmptyingThreshold { get => _EmptyingThreshold.Value; private set => _EmptyingThreshold.Value = value; }
+
+        public static bool Workerless_toggle { get => _Workerless_toggle.Value; private set => _Workerless_toggle.Value = value; }
+        public static bool RemoveUnneededWorkplaces { get => _RemoveUnneededWorkplaces.Value; private set => _RemoveUnneededWorkplaces.Value = value; }
+
+        public void Awake()
+        {
+            _Workerless_toggle = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "enable",
+                                             true,
+                                             "Give special treatment to Workerless Manufactories ? ");
+            _Workerless_floor = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "floor",
+                                             1.2f,
+                                             "For NoWorker buildings, alway increase 'priority' by ... ");
+            _FillingThreshold = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "fill_threshold",
+                                             0.005f,
+                                             new ConfigDescription($"Increase haul priority for filling if less empty than -> {_FillingThreshold.Value} ", new AcceptableValueRange<float>(0f, 1f))
+                                             );
+            _EmptyingThreshold = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "empty_threshold",
+                                             0.34f,
+                                             new ConfigDescription($"Increase haul priority for emptying if more full than -> {_EmptyingThreshold.Value} ", new AcceptableValueRange<float>(0f, 1f)));
+            _RemoveUnneededWorkplaces = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
+                                             "lower",
+                                             false,
+                                             "For potentially NoWorker buildings, reduce workplace priority to lowest ? ");
+            var TAPI_mod_declaration = Path.Combine(Paths.PluginPath, "mod.json");
+            if (!File.Exists(TAPI_mod_declaration))
+            {
+                File.WriteAllText(TAPI_mod_declaration,
+                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
+                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
+                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
+                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
+                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
+                                  $"  \"EntryDll\": \"{Path.Combine(Paths.PluginPath, GetType().Namespace + ".dll")}\", // Optional. The entry dll if the mod has custom code\r\n" +
+                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
+                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
+            }
+        }
         public void Entry(IMod mod, IConsoleWriter consoleWriter)
         {
-            Config = mod.Configs.Get<NoWorkerHaulConfig>();
-            Harmony harmony = new Harmony("Kamigari84.NoWorkerHaul");
             harmony.PatchAll();
-        }
-    }
-
-    public class NoWorkerHaulConfig : IConfig
-    {
-        public string ConfigFileName => "config";
-        public float NoWorkerBonus { get; set; }
-        public float EmptyingThreshold { get; set; }
-
-        public float FillingThreshold { get; set; }
-
-        public bool RemoveUnneededWorkplaces { get; set; }
-        public NoWorkerHaulConfig()
-        {
-            NoWorkerBonus = 0.8f;
-            EmptyingThreshold = 0.34f;
-            FillingThreshold = 0f;
-            RemoveUnneededWorkplaces = false;
         }
     }
 
@@ -85,7 +113,7 @@ namespace HaulBehaviorProvider_for_Workerless_Manufactory
         [HarmonyPatch(typeof(ProductionIncreaser), "OnEnterFinishedState")]
         private static void DePrioritizer(Manufactory ____manufactory)
         {
-            if (ModEntry.Config.RemoveUnneededWorkplaces && ____manufactory.GameObjectFast.TryGetComponent<WorkplacePriority>(out var priority))
+            if (EP.RemoveUnneededWorkplaces && ____manufactory.GameObjectFast.TryGetComponent<WorkplacePriority>(out var priority))
             {
                 priority.SetPriority(Timberborn.PrioritySystem.Priority.VeryLow);
             }

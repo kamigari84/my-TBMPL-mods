@@ -33,6 +33,8 @@
 
   <ItemGroup>
     <PackageReference Include="TimberApi" Version="0.6.5" />
+	<PackageReference Include="BepInEx.BaseLib" Version="5.4.21" />
+	<PackageReference Include="BepInEx.Core" Version="5.4.21" />
   </ItemGroup>
 
 </Project>
