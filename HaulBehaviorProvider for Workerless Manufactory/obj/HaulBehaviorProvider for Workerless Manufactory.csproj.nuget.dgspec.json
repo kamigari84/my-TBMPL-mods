@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Games\\Timberborn.v0.5.2.1\\my TBMPL mods\\HaulBehaviorProvider for Workerless Manufactory\\HaulBehaviorProvider for Workerless Manufactory.csproj": {}
+  },
+  "projects": {
+    "D:\\Games\\Timberborn.v0.5.2.1\\my TBMPL mods\\HaulBehaviorProvider for Workerless Manufactory\\HaulBehaviorProvider for Workerless Manufactory.csproj": {
+      "version": "0.0.1",
+      "restore": {
+        "projectUniqueName": "D:\\Games\\Timberborn.v0.5.2.1\\my TBMPL mods\\HaulBehaviorProvider for Workerless Manufactory\\HaulBehaviorProvider for Workerless Manufactory.csproj",
+        "projectName": "HaulBehaviorProvider for Workerless Manufactory",
+        "projectPath": "D:\\Games\\Timberborn.v0.5.2.1\\my TBMPL mods\\HaulBehaviorProvider for Workerless Manufactory\\HaulBehaviorProvider for Workerless Manufactory.csproj",
+        "packagesPath": "C:\\Users\\Valerio\\.nuget\\packages\\",
+        "outputPath": "D:\\Games\\Timberborn.v0.5.2.1\\my TBMPL mods\\HaulBehaviorProvider for Workerless Manufactory\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Valerio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.bepinex.dev/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "TimberApi": {
+              "target": "Package",
+              "version": "[0.6.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

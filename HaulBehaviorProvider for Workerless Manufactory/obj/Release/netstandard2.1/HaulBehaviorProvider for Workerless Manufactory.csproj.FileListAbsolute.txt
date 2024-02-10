@@ -1,0 +1,8 @@
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\bin\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.deps.json
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\bin\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.dll
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\obj\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.csproj.AssemblyReference.cache
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\obj\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.GeneratedMSBuildEditorConfig.editorconfig
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\obj\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.AssemblyInfoInputs.cache
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\obj\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.AssemblyInfo.cs
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\obj\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.csproj.CoreCompileInputs.cache
+D:\Games\Timberborn.v0.5.2.1\my TBMPL mods\HaulBehaviorProvider for Workerless Manufactory\obj\Release\netstandard2.1\HaulBehaviorProvider for Workerless Manufactory.dll

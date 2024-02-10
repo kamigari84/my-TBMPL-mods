@@ -537,3 +537,5 @@ obj/Release/netstandard2.1/haulerpatch_getter.AssemblyInfo.cs
 obj/Release/netstandard2.1/haulerpatch_getter.AssemblyInfoInputs.cache
 obj/Release/netstandard2.1/haulerpatch_getter.GeneratedMSBuildEditorConfig.editorconfig
 /Fix Workerless Recipes/WorkerlessManufactory.cs
+Timberborn.BuilderPrioritySystem.BuilderPrioritizable.cs
+Workshop-Decorators.txt

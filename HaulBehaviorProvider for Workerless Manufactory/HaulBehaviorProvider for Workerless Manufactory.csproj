@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>HaulBehaviorProvider_for_Workerless_Manufactory</RootNamespace>
+    <Nullable>enable</Nullable>
+    <Authors>Kamigari84</Authors>
+    <Version>0.0.1</Version>
+    <PackageOutputPath>Haul2Workerless\</PackageOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TimberDev\**" />
+    <Compile Remove="UnityDevLite\**" />
+    <EmbeddedResource Remove="TimberDev\**" />
+    <EmbeddedResource Remove="UnityDevLite\**" />
+    <None Remove="TimberDev\**" />
+    <None Remove="UnityDevLite\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AlwaysFill.cs" />
+    <Compile Remove="HaulBehaviourProvider\Core\Configurator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TimberApi" Version="0.6.5" />
+  </ItemGroup>
+
+</Project>
