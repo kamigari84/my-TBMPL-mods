@@ -1,2 +1,2 @@
 # TBMPL_mods
- Some code-only mods for Timberborn using TBMPL
+ Some code/config-only mods for Timberborn using TAPI/BepInEx (originally used TBMPL)
