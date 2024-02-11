@@ -3,18 +3,16 @@
 // License: Public Domain
 
 using System;
-using System.Linq;
 using System.Reflection;
-using UnityDev.Utils.LogUtilsLite;
 
 // ReSharper disable once CheckNamespace
-namespace UnityDev.Utils.Reflections {
+namespace Helpers {
 
 /// <summary>Wrapper to implement efficient access to the class fields via reflection.</summary>
 /// <remarks>It ignores access scope.</remarks>
 /// <typeparam name="T">type of the class to get the field for.</typeparam>
 /// <typeparam name="TV">type of the field value.</typeparam>
-sealed class ReflectedField<T, TV> {
+public sealed class ReflectedField<T, TV> {
   readonly FieldInfo _fieldInfo;
 
   /// <summary>Creates the reflection for the field.</summary>

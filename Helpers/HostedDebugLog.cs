@@ -7,13 +7,13 @@ using Timberborn.BaseComponentSystem;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
-namespace UnityDev.Utils.LogUtilsLite {
+namespace Helpers {
 
 /// <summary>A light version of logging utils from UnityDev specialized for Timberborn.</summary>
 /// <remarks>https://github.com/ihsoft/UnityDev_Utils</remarks>
 /// <seealso cref="DebugEx.LoggingSettings"/>
 [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
-static class HostedDebugLog {
+public static class HostedDebugLog {
   /// <summary>Logs a formatted INFO message with a host identifier.</summary>
   public static void Info(BaseComponent host, string format, params object[] args) {
     Log(LogType.Log, host, format, args);

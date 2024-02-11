@@ -6,16 +6,15 @@ using System.Collections.Concurrent;
 using System.Threading;
 using Timberborn.SingletonSystem;
 using Timberborn.TickSystem;
-using UnityDev.Utils.LogUtilsLite;
 using UnityEngine;
 
 // ReSharper disable UnusedMember.Local
 // ReSharper disable MemberCanBePrivate.Global
-namespace IgorZ.TimberDev.Logging {
+namespace Helpers {
 
 /// <summary>Helper to catch logs from the non-main threads and spitting them out to the main logger.</summary>
 /// <remarks>Bind this class via Bindito as singleton to make it working.</remarks>
-class ThreadedLogsRecorder : ILoadableSingleton, ITickableSingleton {
+public class ThreadedLogsRecorder : ILoadableSingleton, ITickableSingleton {
   readonly ConcurrentQueue<string> _logRecords = new ConcurrentQueue<string>();
   Thread _mainUnityThread;
 

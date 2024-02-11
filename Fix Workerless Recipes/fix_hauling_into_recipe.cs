@@ -9,9 +9,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using TimberApi.ModSystem;
 using TimberApi.ConsoleSystem;
-using System.IO;
-using File = System.IO.File;
-using System.Reflection;
+using Helpers;
 
 
 namespace WorkerlessRecipe_HaulingFix
@@ -28,27 +26,11 @@ namespace WorkerlessRecipe_HaulingFix
         private static ConfigEntry<bool> _Workerless_toggle;
         private static ConfigEntry<bool> _Workplace_deprioritize;
         private static Harmony harmony;
-        private string plugin_dll;
-        private string mod_declaration;
 
         public EP()
         {
-            plugin_dll = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath;
-            mod_declaration = Path.Combine(Path.GetDirectoryName(plugin_dll), "mod.json");
-            if (!File.Exists(mod_declaration))
-            {
-                
-                File.WriteAllText(mod_declaration,
-                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
-                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
-                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
-                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
-                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
-                                  $"  \"EntryDll\": \"{Path.GetFileName(plugin_dll)}\", // Optional. The entry dll if the mod has custom code\r\n" +
-                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
-                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
-            }
-            harmony = new Harmony(EP.mod_guid);
+            EPHelpers.TAPI_declarer(GUID: mod_guid, Version: mod_version, Desc: mod_desc);
+            harmony = new Harmony(mod_guid);
             _Prioritize_threshold = Config.Bind("/Prioritize by Haulers/ Settings",      // The section under which the option is shown
                          "threshold",  // The key of the configuration option in the configuration file
                          0.005f, // The default value

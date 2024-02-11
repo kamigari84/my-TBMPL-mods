@@ -6,10 +6,10 @@ using System;
 using System.Linq;
 
 // ReSharper disable once CheckNamespace
-namespace UnityDev.Utils.Reflections {
+namespace Helpers {
 
 /// <summary>Various utils to deal with the types via reflections.</summary>
-static class TypeUtils {
+public static class TypeUtils {
   /// <summary>Gets the type by it's full name. Even if the type is internal.</summary>
   /// <exception cref="ArgumentException">if the type cannot be found in the current appdomain.</exception>
   public static Type GetInternalType(string fullTypeName) {

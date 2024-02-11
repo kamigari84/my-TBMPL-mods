@@ -4,15 +4,14 @@
 
 using System;
 using System.Reflection;
-using UnityDev.Utils.LogUtilsLite;
 
 // ReSharper disable once CheckNamespace
-namespace UnityDev.Utils.Reflections {
+namespace Helpers {
 
 /// <summary>Wrapper to implement an efficient access to the class method via reflection.</summary>
 /// <remarks>Implements access to a method that returns <c>void</c> and accepts no arguments.</remarks>
 /// <typeparam name="T">type of the class to get the method for.</typeparam>
-sealed class ReflectedAction<T> {
+public sealed class ReflectedAction<T> {
   readonly MethodInfo _methodInfo;
 
   /// <summary>Creates the reflection for the action.</summary>

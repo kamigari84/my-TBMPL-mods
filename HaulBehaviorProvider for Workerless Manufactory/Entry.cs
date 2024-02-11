@@ -2,8 +2,6 @@
 using BepInEx.Configuration;
 using HarmonyLib;
 using NoWorkerHaul.HaulBehaviourProvider.Core;
-using System;
-using System.IO;
 using System.Reflection;
 using TimberApi.ConsoleSystem;
 using TimberApi.ModSystem;
@@ -13,6 +11,7 @@ using Timberborn.Hauling;
 using Timberborn.TemplateSystem;
 using Timberborn.Workshops;
 using Timberborn.WorkSystem;
+using Helpers;
 
 
 namespace NoWorkerHaul
@@ -39,25 +38,11 @@ namespace NoWorkerHaul
 
         public static bool Workerless_toggle { get => _Workerless_toggle.Value; private set => _Workerless_toggle.Value = value; }
         public static bool RemoveUnneededWorkplaces { get => _RemoveUnneededWorkplaces.Value; private set => _RemoveUnneededWorkplaces.Value = value; }
-        private string plugin_dll;
-        private string mod_declaration;
 
         public EP()
         {
-            plugin_dll = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath;
-            mod_declaration = Path.Combine(Path.GetDirectoryName(plugin_dll), "mod.json");
-            if (!File.Exists(mod_declaration))
-            {
-                File.WriteAllText(mod_declaration,
-                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
-                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
-                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
-                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
-                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
-                                  $"  \"EntryDll\": \"{Path.GetFileName(plugin_dll)}\", // Optional. The entry dll if the mod has custom code\r\n" +
-                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
-                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
-            }
+            EPHelpers.TAPI_declarer(GUID: mod_guid, Version: mod_version, Desc: mod_desc);
+
             harmony = new Harmony(EP.mod_guid);
             _Workerless_toggle = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
                                              "enable",
