@@ -2,6 +2,7 @@
 using BepInEx.Configuration;
 using HarmonyLib;
 using NoWorkerHaul.HaulBehaviourProvider.Core;
+using System;
 using System.IO;
 using System.Reflection;
 using TimberApi.ConsoleSystem;
@@ -29,7 +30,7 @@ namespace NoWorkerHaul
 
         private static ConfigEntry<bool> _Workerless_toggle;
         private static ConfigEntry<bool> _RemoveUnneededWorkplaces;
-        private static Harmony harmony = new Harmony(EP.mod_guid);
+        private static Harmony harmony;
 
         public static float Workerless_floor { get => _Workerless_floor.Value; private set => _Workerless_floor.Value = value; }
         public static float FillingThreshold { get => _FillingThreshold.Value; private set => _FillingThreshold.Value = value; }
@@ -38,9 +39,26 @@ namespace NoWorkerHaul
 
         public static bool Workerless_toggle { get => _Workerless_toggle.Value; private set => _Workerless_toggle.Value = value; }
         public static bool RemoveUnneededWorkplaces { get => _RemoveUnneededWorkplaces.Value; private set => _RemoveUnneededWorkplaces.Value = value; }
+        private string plugin_dll;
+        private string mod_declaration;
 
-        public void Awake()
+        public EP()
         {
+            plugin_dll = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath;
+            mod_declaration = Path.Combine(Path.GetDirectoryName(plugin_dll), "mod.json");
+            if (!File.Exists(mod_declaration))
+            {
+                File.WriteAllText(mod_declaration,
+                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
+                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
+                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
+                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
+                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
+                                  $"  \"EntryDll\": \"{Path.GetFileName(plugin_dll)}\", // Optional. The entry dll if the mod has custom code\r\n" +
+                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
+                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
+            }
+            harmony = new Harmony(EP.mod_guid);
             _Workerless_toggle = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
                                              "enable",
                                              true,
@@ -52,29 +70,16 @@ namespace NoWorkerHaul
             _FillingThreshold = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
                                              "fill_threshold",
                                              0.005f,
-                                             new ConfigDescription($"Increase haul priority for filling if less empty than -> {_FillingThreshold.Value} ", new AcceptableValueRange<float>(0f, 1f))
+                                             new ConfigDescription($"Increase haul priority for filling if less empty than ... ", new AcceptableValueRange<float>(0f, 1f))
                                              );
             _EmptyingThreshold = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
                                              "empty_threshold",
                                              0.34f,
-                                             new ConfigDescription($"Increase haul priority for emptying if more full than -> {_EmptyingThreshold.Value} ", new AcceptableValueRange<float>(0f, 1f)));
+                                             new ConfigDescription($"Increase haul priority for emptying if more full than ... ", new AcceptableValueRange<float>(0f, 1f)));
             _RemoveUnneededWorkplaces = Config.Bind("NoWorker good-consumer/producer Hauling Settings",
                                              "lower",
                                              false,
                                              "For potentially NoWorker buildings, reduce workplace priority to lowest ? ");
-            var TAPI_mod_declaration = Path.Combine(Paths.PluginPath, "mod.json");
-            if (!File.Exists(TAPI_mod_declaration))
-            {
-                File.WriteAllText(TAPI_mod_declaration,
-                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
-                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
-                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
-                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
-                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
-                                  $"  \"EntryDll\": \"{Path.Combine(Paths.PluginPath, GetType().Namespace + ".dll")}\", // Optional. The entry dll if the mod has custom code\r\n" +
-                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
-                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
-            }
         }
         public void Entry(IMod mod, IConsoleWriter consoleWriter)
         {
@@ -124,7 +129,10 @@ namespace NoWorkerHaul
     static class ComplexPatcher
     {
         [HarmonyTargetMethod]
-        static MethodBase CalculateMethod() => AccessTools.Method(typeof(GoodConsumingBuildingSystemConfigurator).GetNestedType("TemplateModuleProvider"), "Get");
+        static MethodBase CalculateMethod()
+        {
+            return AccessTools.Method(typeof(GoodConsumingBuildingSystemConfigurator).GetNestedType("TemplateModuleProvider"), "Get");
+        }
 
         private static bool Prefix(ManufactoryInventoryInitializer ____goodConsumingBuildingInventoryInitializer, ref TemplateModule __result, WorkshopsTemplateModuleProvider __instance)
         {

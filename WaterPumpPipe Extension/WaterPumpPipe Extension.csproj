@@ -11,7 +11,16 @@
     <AssemblyDirName>TBMPL_$(AssemblyName)</AssemblyDirName>
     <!-- The version should match the version in the attribute -->
     <Version>1.0.1</Version>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
 
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Deterministic>False</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>

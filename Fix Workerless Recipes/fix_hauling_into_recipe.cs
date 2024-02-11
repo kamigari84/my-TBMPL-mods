@@ -11,6 +11,7 @@ using TimberApi.ModSystem;
 using TimberApi.ConsoleSystem;
 using System.IO;
 using File = System.IO.File;
+using System.Reflection;
 
 
 namespace WorkerlessRecipe_HaulingFix
@@ -26,20 +27,33 @@ namespace WorkerlessRecipe_HaulingFix
         private static ConfigEntry<float> _Workerless_floor;
         private static ConfigEntry<bool> _Workerless_toggle;
         private static ConfigEntry<bool> _Workplace_deprioritize;
-        private static Harmony harmony = new Harmony(EP.mod_guid);
-        public static float Prioritize_threshold { get => _Prioritize_threshold.Value; private set => _Prioritize_threshold.Value = value; }
-        public static float Prioritize_strength { get => _Prioritize_strength.Value; private set => _Prioritize_strength.Value = value; }
-        public static float Workerless_floor { get => _Workerless_floor.Value; private set => _Workerless_floor.Value = value; }
-        public static bool Workerless_toggle { get => _Workerless_toggle.Value; private set => _Workerless_toggle.Value = value; }
-        public static bool Workplace_deprioritize { get => _Workplace_deprioritize.Value; private set => _Workplace_deprioritize.Value = value; }
+        private static Harmony harmony;
+        private string plugin_dll;
+        private string mod_declaration;
 
-        public void Awake()
+        public EP()
         {
+            plugin_dll = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath;
+            mod_declaration = Path.Combine(Path.GetDirectoryName(plugin_dll), "mod.json");
+            if (!File.Exists(mod_declaration))
+            {
+                
+                File.WriteAllText(mod_declaration,
+                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
+                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
+                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
+                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
+                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
+                                  $"  \"EntryDll\": \"{Path.GetFileName(plugin_dll)}\", // Optional. The entry dll if the mod has custom code\r\n" +
+                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
+                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
+            }
+            harmony = new Harmony(EP.mod_guid);
             _Prioritize_threshold = Config.Bind("/Prioritize by Haulers/ Settings",      // The section under which the option is shown
-                                         "threshold",  // The key of the configuration option in the configuration file
-                                         0.005f, // The default value
-                                         new ConfigDescription($"Threshold for applying /Prioritize by Haulers/\n Current value: {_Prioritize_threshold.Value}", new AcceptableValueRange<float>(0f, 1f))
-                                         ); // Description of the option to show in the config file
+                         "threshold",  // The key of the configuration option in the configuration file
+                         0.005f, // The default value
+                         new ConfigDescription($"Threshold for applying /Prioritize by Haulers/", new AcceptableValueRange<float>(0f, 1f))
+                         ); // Description of the option to show in the config file
             _Prioritize_strength = Config.Bind("/Prioritize by Haulers/ Settings",      // The section under which the option is shown
                                          "strength",  // The key of the configuration option in the configuration file
                                          1.1f, // The default value
@@ -56,20 +70,14 @@ namespace WorkerlessRecipe_HaulingFix
                                              "lower",
                                              false,
                                              "For potentially NoWorker buildings, reduce workplace priority to lowest ? ");
-            var TAPI_mod_declaration = Path.Combine(Paths.PluginPath, "mod.json");
-            if (!File.Exists(TAPI_mod_declaration))
-            {
-                File.WriteAllText(TAPI_mod_declaration,
-                                  $"{{\r\n  \"Name\": \"{mod_desc}/\",                     // Name of the mod\r\n" +
-                                  $"  \"Version\": \"{mod_version}\",                       // Version of the mod\r\n" +
-                                  $"  \"UniqueId\": \"{mod_guid}\",     // Unique identifier of the mod\r\n" +
-                                  $"  \"MinimumApiVersion\": \"0.6.5\",             // Minimun TimberAPI version this mod needs\r\n" +
-                                  $"  \"MinimumGameVersion\": \"0.5.7\",            // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5)\r\n" +
-                                  $"  \"EntryDll\": \"{Path.Combine(Paths.PluginPath, GetType().Namespace + ".dll")}\", // Optional. The entry dll if the mod has custom code\r\n" +
-                                  $"  \"Assets\": [                               // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. \r\n" +
-                                  $"    {{\r\n      \"Prefix\": \"{mod_guid}\",\r\n      \"Scenes\": [\r\n        \"All\"\r\n      ]\r\n    }}\r\n  ]\r\n}}");
-            }
         }
+
+        public static float Prioritize_threshold { get => _Prioritize_threshold.Value; private set => _Prioritize_threshold.Value = value; }
+        public static float Prioritize_strength { get => _Prioritize_strength.Value; private set => _Prioritize_strength.Value = value; }
+        public static float Workerless_floor { get => _Workerless_floor.Value; private set => _Workerless_floor.Value = value; }
+        public static bool Workerless_toggle { get => _Workerless_toggle.Value; private set => _Workerless_toggle.Value = value; }
+        public static bool Workplace_deprioritize { get => _Workplace_deprioritize.Value; private set => _Workplace_deprioritize.Value = value; }
+
         public void Entry(IMod mod, IConsoleWriter consoleWriter)
         {
             harmony.PatchAll();
